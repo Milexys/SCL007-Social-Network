@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Milexys/SCL007-Social-Network/issues"
   },
-  "homepage": "https://github.com/Milexys/SCL007-Social-Network#readme"
+  "homepage": "https://github.com/Milexys/SCL007-Social-Network#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
 }
