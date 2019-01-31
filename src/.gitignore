@@ -524,3 +524,11 @@ healthchecksdb
 package-lock.json
 .nyc_output/
 node_modules/
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
