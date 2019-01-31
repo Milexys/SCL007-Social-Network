@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Milexys/SCL007-Social-Network#readme",
   "dependencies": {
+    "eslint": "^5.12.1",
+    "g": "^2.0.1",
     "mocha": "^5.2.0"
   }
 }
