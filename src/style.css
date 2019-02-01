@@ -37,8 +37,6 @@
 	font-size: 0.8em;
 	color: rgb(19, 7, 7);
 }
-
-
 /*
  * Navegación
  */
@@ -63,6 +61,6 @@ nav ul li a {
 	padding: 0 10px;
 	text-decoration: none;
 }
-
 nav ul li a:hover {
-	background: #0b76a6;}
+	background: #0b76a6;
+}
