@@ -1,3 +1,21 @@
+# Social Pets
+
+## **Descripción**
+
+Social Pets es red social para dueños de mascotas, que da información sobre salud y alimentación, como opciones de veterinarios, peluquería, tips de alimentación, entre otros.
+
+## **Definición de usuario**
+
+Se realizó una encuesta para poder conocer más sobre las preferencias de los usuarios al momento de necesitar una red social para sus mascotas. El 100% de los encuestados tienen mascotas, el 89% de ellos no conocen una red social para mascotas.
+El 67% están interesados en inscribir a sus mascotas en una red social, el 83% le interesa ver temas de alimentación y el 92% están interesados en ver contenido sobre salud. Se detecta como prinicipal problemática el desconocimiento de una red social para mascotas que hable de temas que les interesa a la mayoría de los usuarios.
+
+## **Necesidades del Usuario**
+
+* Poder inscribir a su mascota en una red social.
+* Recibir información sobre salud de mascotas.
+* Recibir información sobre alimentación para mascotas.
+
+
 ## **Historias de Usuario:**
 
 ## 1 
@@ -61,3 +79,11 @@ Entonces: Tendrá toda la información necesaria para acudir a la misma.
  * Le da click a la opción de Eventos de Vacunación.
 
  * Se visualizarán las diferentes jornadas de vacunación.
+
+ ## **Prototipo de Baja Fidelidad**
+
+ ![imagen 1](img/boceto.jpeg)
+
+## **Prototipo de Alta Fidelidad**
+
+## **Test de usabilidad**
