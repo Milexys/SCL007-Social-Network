@@ -1,4 +1,4 @@
-import {checkAuthState, registerUser} from '../auth/auth.js';
+import {checkAuthState, registerUser} from './auth/auth.js';
 
 window.onload = () => {
   checkAuthState((user)=>{
@@ -7,9 +7,17 @@ window.onload = () => {
       app.style.display = "block";
     }else{
       loginOrRegister.style.display = "block";
+      app.style.display = "none"; 
+    }})
+  checkAuthState((user)=>{
+    if(user){
+      logout.style.display = "none";
+      app.style.display = "block";
+    }else{
+      logout.style.display = "block";
       app.style.display = "none";
-    }
-  });
+      }    
+  })
 };
 
 
