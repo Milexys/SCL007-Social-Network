@@ -7,19 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>red social de mascotas</title>
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
-      authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
-      databaseURL: "https://mi-red-social-de-mascotas.firebaseio.com",
-      projectId: "mi-red-social-de-mascotas",
-      storageBucket: "mi-red-social-de-mascotas.appspot.com",
-      messagingSenderId: "720811188126"
-    };
-    firebase.initializeApp(config);
-  </script>
+  
+ 
   <link rel="stylesheet" type="text/css" media="screen" href="grid.css" />
 </head>
 
@@ -41,20 +30,38 @@
   </header>
   <div class="containerLogin">
   <h1>hola bienvenido</h1>
-  
+  <button type="button" onclick= "ingresaConGoogle()">Ingresa con Facebook</button>
   <h2>Ingresa Tus Datos</h2>
-  <form acction="JavaScript:void(0)">
+  
     <p>Email</p>
     <input id="mailtext" type="email">
     <p>Contraseña</p>
     <input id="passwordTextfield" type="password">
-    <button onclick="registrar()">Registrate</button>   
-    <button onclick="login()">Entrar</button>
-    <button onclick="logout()">Salir</button>
-    
-    <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton">
-  </form></div>
+    <button type="button" onclick="registrar()">Registrate</button>  
+    <button type="button" onclick="login()">Entrar</button>
+    <button type="button" onclick="logout()">Salir</button>
+    <!-- <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton"> -->
+  </div>
   
+  <!-- <p>Email</p>
+    <input id="mailtext2" type="email">
+    <p>Contraseña</p>
+    <input id="passwordTextfield2" type="password">
+    
+    <div id="contenido"></div> -->
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
+    authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
+    databaseURL:"https://mi-red-social-de-mascotas.firebaseio.com",
+    projectId: "mi-red-social-de-mascotas",
+    storageBucket: "mi-red-social-de-mascotas.appspot.com",
+    messagingSenderId: "720811188126"
+    };
+    firebase.initializeApp(config);
+</script>
   <script src="./auth/auth.js"></script>
   <script src="./main.js"></script>
   
