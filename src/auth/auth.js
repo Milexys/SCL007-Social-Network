@@ -1,4 +1,5 @@
-// export const checkAuthState=(callback) => {
+var provider = new firebase.auth.GoogleAuthProvider();
+// export const checkAuthState = (callback) => {
 //   firebase.auth().onAuthStatechanged((user)=>{
 //     if (user){
 //     console.log("hay usuario>"+JSON.stringify(user));
