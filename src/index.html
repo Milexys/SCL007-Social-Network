@@ -8,6 +8,18 @@
   <title>red social de mascotas</title>
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
+      authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
+      databaseURL: "https://mi-red-social-de-mascotas.firebaseio.com",
+      projectId: "mi-red-social-de-mascotas",
+      storageBucket: "mi-red-social-de-mascotas.appspot.com",
+      messagingSenderId: "720811188126"
+    };
+    firebase.initializeApp(config);
+  </script>
   <link rel="stylesheet" type="text/css" media="screen" href="grid.css" />
 </head>
 
@@ -36,24 +48,13 @@
     <input id="mailtext" type="email">
     <p>Contraseña</p>
     <input id="passwordTextfield" type="password">
-    <button id="registerButton">Registrate</button>   
-    <button id="loginButton">Entrar</button>
-    <button id="logoutButton">Salir</button>
+    <button onclick="registrar()">Registrate</button>   
+    <button onclick="login()">Entrar</button>
+    <button onclick="logout()">Salir</button>
     
     <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton">
   </form></div>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
-      authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
-      databaseURL: "https://mi-red-social-de-mascotas.firebaseio.com",
-      projectId: "mi-red-social-de-mascotas",
-      storageBucket: "mi-red-social-de-mascotas.appspot.com",
-      messagingSenderId: "720811188126"
-    };
-    firebase.initializeApp(config);
-  </script>
+  
   <script src="./auth/auth.js"></script>
   <script src="./main.js"></script>
   
