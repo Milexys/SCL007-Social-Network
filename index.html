@@ -30,7 +30,8 @@
   </header>
   <div class="containerLogin">
   <h1>hola bienvenido</h1>
-  <button type="button" onclick= "ingresaConGoogle()">Ingresa con Facebook</button>
+  <button type="button" onclick="google()">Ingresa con Google</button>
+ 
   <h2>Ingresa Tus Datos</h2>
   
     <p>Email</p>
@@ -40,7 +41,7 @@
     <button type="button" onclick="registrar()">Registrate</button>  
     <button type="button" onclick="login()">Entrar</button>
     <button type="button" onclick="logout()">Salir</button>
-    <!-- <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton"> -->
+    <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton">
   </div>
   
   <!-- <p>Email</p>
@@ -50,6 +51,7 @@
     
     <div id="contenido"></div> -->
 <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
 <script>
   // Initialize Firebase
   var config = {
@@ -60,7 +62,9 @@
     storageBucket: "mi-red-social-de-mascotas.appspot.com",
     messagingSenderId: "720811188126"
     };
-    firebase.initializeApp(config);
+  firebase.initializeApp(config);
+    
+  
 </script>
   <script src="./auth/auth.js"></script>
   <script src="./main.js"></script>
