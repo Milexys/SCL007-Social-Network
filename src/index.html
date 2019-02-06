@@ -8,51 +8,65 @@
   <title>red social de mascotas</title>
   <link rel="stylesheet" type="text/css" media="screen" href="styles/grid.css" />
   <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
-</head>
+
+
 
 <body>
-  <header id="header">
-    <a id="logo-header" href="#">
-      <span class="site-name">Social Pets</span>
-      <span class="site-desc">especialmente para tu mascotas</span>
+  <header class="header">
+    <div class="container logo-nav-container">
+    <a class="logo">
+      <span class="site-name">Social Pets</span><br>
+      <span class="site-des">Especialmente para tu mascota</span>
     </a>
-
     <nav>
       <ul>
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Acerca de</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
-    </nav>
+    </nav></div>
 
   </header>
+  <div class="containerLogin">
   <h1>hola bienvenido</h1>
-  <h1>Bienvenido</h1>
+  <button type="button" onclick="google()">Ingresa con Google</button>
+ 
   <h2>Ingresa Tus Datos</h2>
-  <form acction="JavaScript:void(0)">
+  
     <p>Email</p>
-    <input id="emailTextfield" type="email">
+    <input id="mailtext" type="email">
     <p>Contraseña</p>
     <input id="passwordTextfield" type="password">
-    <button id="registerButton">Registrate</button>
-    <button id="loginButton">Logueate</button>
+    <button type="button" onclick="registrar()">Registrate</button>  
+    <button type="button" onclick="login()">Entrar</button>
+    <button type="button" onclick="logout()">Salir</button>
     <input type="reset" name="Borrar" id="Borrar" value="Reset" class="boton">
-  </form>
-  <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
-      authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
-      databaseURL: "https://mi-red-social-de-mascotas.firebaseio.com",
-      projectId: "mi-red-social-de-mascotas",
-      storageBucket: "mi-red-social-de-mascotas.appspot.com",
-      messagingSenderId: "720811188126"
+  </div>
+  
+  <!-- <p>Email</p>
+    <input id="mailtext2" type="email">
+    <p>Contraseña</p>
+    <input id="passwordTextfield2" type="password">
+    
+    <div id="contenido"></div> -->
+<script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBA-CW33zo5aZMpSc8_IQLloGOCREcfANE",
+    authDomain: "mi-red-social-de-mascotas.firebaseapp.com",
+    databaseURL:"https://mi-red-social-de-mascotas.firebaseio.com",
+    projectId: "mi-red-social-de-mascotas",
+    storageBucket: "mi-red-social-de-mascotas.appspot.com",
+    messagingSenderId: "720811188126"
     };
     firebase.initializeApp(config);
   </script>
   <script src="auth/auth.js" type="module"></script>
   <script src="main.js" type="module"></script>
+
+  
 </body>
 
 </html>
