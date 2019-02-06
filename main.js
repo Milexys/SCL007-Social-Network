@@ -18,11 +18,11 @@ modal.style.display = "block";
 closeModal.addEventListener("click", () =>{
 modal.style.display = "none";
 });
-/*window.addEventListener("click", () =>{
+window.addEventListener("click", (e) =>{
 if (e.target === flex){
 modal.style.display = "none";
 }
-});*/
+});
 
 let nextButton = document.getElementById("next");
 let pets =document.getElementById("pets");
@@ -37,29 +37,42 @@ nextButton.style.display = "none";
 registerButton.style.display = "block";
 })
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-function google(){
-  console.log("click")
-  const provider = new firebase.auth.GoogleAuthProvider();provider
-  provider.addScope('https://www.googleapis.com/auth/plus.login');
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-var token = result.credential.accessToken;
-var user = result.user;
-console.log(user);
-});
-}
-function registrar(){
- 
-  const email= document.getElementById("mailtext").value; 
-  const contraseña= document.getElementById("passwordTextfield").value; 
-  firebase.auth().createUserWithEmailAndPassword(email, contraseña).catch(function(error) {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode + " " + errorMessage);
-    // ...
+import {checkAuthState, registerUser} from '../auth/auth.js';
+
+window.onload = () => {
+  checkAuthState((user)=>{
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log ("existe usuario activo");
+        const displayName = user.displayName; mensaje()
+        const email = user.email;
+        
+        const emailVerified = user.emailVerified;
+        const photoURL = user.photoURL;
+        const isAnonymous = user.isAnonymous;
+        const uid = user.uid;
+        const providerData = user.providerData;
+        console.log ("no existe usuario activo");
+        console.log(email,+displayName,+" "+emailVerified,+photoURL,+isAnonymous,+uid,+providerData);
+       
+      } else {
+        // User is signed out.
+        // ...
+      }
+    });
    }); 
-  
 }
+const register = () => {
+ 
+  const email = document.getElementById("emailRegister").value; 
+  const password = document.getElementById("passwordRegister").value; 
+  registerUser(email, password);
+  modal.style.display = "none";
+   }
+   document.getElementById("registerButton").addEventListener("click", register);
+
+  
+
 function login(){
   const email= document.getElementById("mailtext").value; 
   const contraseña= document.getElementById("passwordTextfield").value; 
@@ -77,28 +90,7 @@ function login(){
 // function reset(){
 //   console.log("click")
 // }
-function observador(){
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log ("existe usuario activo");
-      const displayName = user.displayName; mensaje()
-      const email = user.email;
-      
-      const emailVerified = user.emailVerified;
-      const photoURL = user.photoURL;
-      const isAnonymous = user.isAnonymous;
-      const uid = user.uid;
-      const providerData = user.providerData;
-      console.log ("no existe usuario activo");
-      console.log(email,+displayName,+" "+emailVerified,+photoURL,+isAnonymous,+uid,+providerData);
-     
-    } else {
-      // User is signed out.
-      // ...
-    }
-  });
- } 
-  observador()
+
 
 function mensaje(){
   const contenido = document.getElementById("contenido"); 
