@@ -78,12 +78,4 @@ const loginUserWithEmailAndPassword = () => {
   };
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
-function mensaje(){
-  const contenido = document.getElementById("contenido"); 
-  contenido.innerHTML= "mensaje para ususrio"
-}
-
-function logout(){
-  console.log ("hiciste click");
-}
 
