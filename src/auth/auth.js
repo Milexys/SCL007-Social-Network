@@ -1,4 +1,4 @@
-var provider = new firebase.auth.GoogleAuthProvider();
+
 // export const checkAuthState = (callback) => {
 //   firebase.auth().onAuthStatechanged((user)=>{
 //     if (user){
@@ -8,7 +8,7 @@ var provider = new firebase.auth.GoogleAuthProvider();
 //       console.log("no esta logueado")
 //       callback(null)
 //     }
-//   })    
+//   })   
 // };
 
 // export const registerUser = (email, password) => {

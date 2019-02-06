@@ -1,8 +1,15 @@
-function ingresaConGoogle(){
-  console.log ("hiciste click"); 
-} 
+function google(){
+  console.log("click")
+  const provider = new firebase.auth.GoogleAuthProvider();provider
+  provider.addScope('https://www.googleapis.com/auth/plus.login');
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+var token = result.credential.accessToken;
+var user = result.user;
+console.log(user);
+});
+}
 function registrar(){
-  console.log ("hiciste click");
+ 
   const email= document.getElementById("mailtext").value; 
   const contraseña= document.getElementById("passwordTextfield").value; 
   firebase.auth().createUserWithEmailAndPassword(email, contraseña).catch(function(error) {
@@ -18,21 +25,26 @@ function login(){
   const email= document.getElementById("mailtext").value; 
   const contraseña= document.getElementById("passwordTextfield").value; 
   console.log ("hiciste click");
-  firebase.auth().signInWithEmailAndPassword(email, contraseña).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(email, contraseña)
+  console.log(email);
+  .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log (errorCode + " " + errorMessage);
     
-  });
+  };
 }
-
+function reset(){
+  console.log("click")
+}
 function observador(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       console.log ("existe usuario activo");
       const displayName = user.displayName; mensaje()
       const email = user.email;
+      
       const emailVerified = user.emailVerified;
       const photoURL = user.photoURL;
       const isAnonymous = user.isAnonymous;
@@ -57,7 +69,6 @@ function mensaje(){
 function logout(){
   console.log ("hiciste click");
 }
-// import {checkAuthState}from './auth/auth.js';import {registerUser} from './auth/auth.js';
 
 // window.onload = () => {
 //   checkAuthState((user)=>{
