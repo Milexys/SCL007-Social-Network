@@ -27,17 +27,17 @@ function login(){
   console.log ("hiciste click");
   firebase.auth().signInWithEmailAndPassword(email, contraseña)
   console.log(email);
-  .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log (errorCode + " " + errorMessage);
+  // .catch(function(error) {
+  //   // Handle Errors here.
+  //   var errorCode = error.code;
+  //   var errorMessage = error.message;
+  //   console.log (errorCode + " " + errorMessage);
     
-  };
+  // };
 }
-function reset(){
-  console.log("click")
-}
+// function reset(){
+//   console.log("click")
+// }
 function observador(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
