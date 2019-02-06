@@ -1,4 +1,4 @@
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//:::::::::::::::::::::::::::FUNCION PARA MENU RESPONSIVE::::::::::::::::::::::::::::::::::::::
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,6 +7,7 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+//:::::::::::::::::::::::::::FUNCION PARA VENTANA MODAL:::::::::::::::::::::::::::::::::::::::::::::
 let modal = document.getElementById("mimodal");
 let flex = document.getElementById("flex");
 let openModal = document.getElementById("register");
@@ -23,12 +24,11 @@ if (e.target === flex){
 modal.style.display = "none";
 }
 });
-
+//:::::::::::::::::::::::::::FUNCION DE REGISTRO EN EL MODAL::::::::::::::::::::::::::::::::::::::::
 let nextButton = document.getElementById("next");
 let pets =document.getElementById("pets");
 let owner = document.getElementById("owner");
 let registerButton = document.getElementById("registerButton");
-
 
 nextButton.addEventListener("click", () =>{
 pets.style.display = "block";
@@ -38,7 +38,7 @@ registerButton.style.display = "block";
 })
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 import {checkAuthState, registerUser, loginUser} from '../auth/auth.js';
-
+//:::::::::::::::::::::::::::::::::::OBSERVADOR::::::::::::::::::::::::::::::::::::::::::::::::::::
 window.onload = () => {
   checkAuthState((user)=>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -62,28 +62,21 @@ window.onload = () => {
     });
    }); 
 }
+//::::::::::::::::::::::::::::::::FUNCION DE REGISTRO::::::::::::::::::::::::::::::::::::::::::::::::
 const register = () => {
- 
   const email = document.getElementById("emailRegister").value; 
   const password = document.getElementById("passwordRegister").value; 
   registerUser(email, password);
   modal.style.display = "none";
    }
-   document.getElementById("registerButton").addEventListener("click", register);
-
+//:::::::::::::::::::::::::::::::::FUNCION DE LOGIN::::::::::::::::::::::::::::::::::::::::::::::::::   
 const loginUserWithEmailAndPassword = () => {
     const emailFromUser = emailSignIn.value;
     const passwordFromUser = passwordSignIn.value;
     loginUser(emailFromUser, passwordFromUser);
   };
+
+  document.getElementById("registerButton").addEventListener("click", register);
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
-function mensaje(){
-  const contenido = document.getElementById("contenido"); 
-  contenido.innerHTML= "mensaje para ususrio"
-}
-
-function logout(){
-  console.log ("hiciste click");
-}
 
