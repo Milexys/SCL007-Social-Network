@@ -27,7 +27,7 @@ facebook.addEventListener("click", () => {
   console.log(user);
   });
   });
-  
+
   export const checkAuthState = (callback) => {
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
@@ -49,3 +49,13 @@ export const registerUser = (email, password) => {
         // ...
 });
 }
+
+export const loginUser = (emailFromUser, passwordFromUser) => {
+    firebase.auth().signInWithEmailAndPassword(emailFromUser, passwordFromUser)
+      .then((user)=>{
+        console.log("Usuario logueado > "+JSON.stringify(user));
+      })
+      .catch((error) => {
+        console.error("Error > "+error.message);
+      });
+  }

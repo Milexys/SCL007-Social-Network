@@ -37,7 +37,7 @@ nextButton.style.display = "none";
 registerButton.style.display = "block";
 })
 //:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-import {checkAuthState, registerUser} from '../auth/auth.js';
+import {checkAuthState, registerUser, loginUser} from '../auth/auth.js';
 
 window.onload = () => {
   checkAuthState((user)=>{
@@ -71,26 +71,12 @@ const register = () => {
    }
    document.getElementById("registerButton").addEventListener("click", register);
 
-  
-
-function login(){
-  const email= document.getElementById("mailtext").value; 
-  const contraseña= document.getElementById("passwordTextfield").value; 
-  console.log ("hiciste click");
-  firebase.auth().signInWithEmailAndPassword(email, contraseña)
-  console.log(email);
-  // .catch(function(error) {
-  //   // Handle Errors here.
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  //   console.log (errorCode + " " + errorMessage);
-    
-  // };
-}
-// function reset(){
-//   console.log("click")
-// }
-
+const loginUserWithEmailAndPassword = () => {
+    const emailFromUser = emailSignIn.value;
+    const passwordFromUser = passwordSignIn.value;
+    loginUser(emailFromUser, passwordFromUser);
+  };
+  document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
 function mensaje(){
   const contenido = document.getElementById("contenido"); 
@@ -101,32 +87,3 @@ function logout(){
   console.log ("hiciste click");
 }
 
-// window.onload = () => {
-//   checkAuthState((user)=>{
-//     if(user){
-//       loginOrRegister.style.display = "none";
-//       app.style.display = "block";
-//     }else{
-//       loginOrRegister.style.display = "block";
-//       app.style.display = "none"; 
-//     }})
-//   checkAuthState((user)=>{
-//     if(user){
-//       logout.style.display = "none";
-//       app.style.display = "block";
-//     }else{
-//       logout.style.display = "block";
-//       app.style.display = "none";
-//       }    
-//   })
-
-
-
-// const registerWithEmailAndPassword = () => {
-//   const emailFromUser = emailTextfield.value;
-//   const passwordFromUser = passwordTextfield.value;
-//   registerUser(emailFromUser, passwordFromUser);
-// };
-
-// registerButton.addEventListener('click', registerWithEmailAndPassword);
-// };
