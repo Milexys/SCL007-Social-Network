@@ -1,3 +1,42 @@
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+let modal = document.getElementById("mimodal");
+let flex = document.getElementById("flex");
+let openModal = document.getElementById("register");
+let closeModal = document.getElementById("close");
+
+openModal.addEventListener("click", () =>{
+modal.style.display = "block";
+});
+closeModal.addEventListener("click", () =>{
+modal.style.display = "none";
+});
+/*window.addEventListener("click", () =>{
+if (e.target === flex){
+modal.style.display = "none";
+}
+});*/
+
+let nextButton = document.getElementById("next");
+let pets =document.getElementById("pets");
+let owner = document.getElementById("owner");
+let registerButton = document.getElementById("registerButton");
+
+
+nextButton.addEventListener("click", () =>{
+pets.style.display = "block";
+owner.style.display = "none";
+nextButton.style.display = "none";
+registerButton.style.display = "block";
+})
+//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 function google(){
   console.log("click")
   const provider = new firebase.auth.GoogleAuthProvider();provider
