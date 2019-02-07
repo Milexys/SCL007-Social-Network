@@ -169,6 +169,10 @@ body {
     textarea{
       width: 100%;
     }
+    .alerta{
+      color:red;
+      display: none;
+    }
     @keyframes modal{
       from{
         bottom: -330px; 
