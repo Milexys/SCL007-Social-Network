@@ -78,33 +78,39 @@
                                <div class="col-1"></div>
                                <div id="pets" class="pets">
                                     <h1>Registro de la Mascota</h1>
-                                    <div class="col-6">
-                                        <p style="text-align: left">Cantidad de Mascotas: </p>
-                                        <input type="number" name="" id="petsNumber">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p style="text-align: left">Cantidad de Mascotas: </p>
+                                            <input type="number" name="" id="petsNumber">
+                                        </div>
+                                        <div class="col-6">
+                                                <p style="text-align: left">Tipo de Mascota: </p>
+                                                <select class="selectPet">
+                                                    <option value="dog">Perro</option>
+                                                    <option value="cat">Gato</option>
+                                                    <option value="Rabbit">Conejo</option>
+                                                    <option value="turtle">Tortuga</option>
+                                                </select>
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                            <p style="text-align: left">Tipo de Mascota: </p>
-                                            <select class="selectPet">
-                                                <option value="dog">Perro</option>
-                                                <option value="cat">Gato</option>
-                                                <option value="Rabbit">Conejo</option>
-                                                <option value="turtle">Tortuga</option>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p style="text-align: left">Sexo: </p>
+                                            <select class="selectSex">
+                                                <option value="female">Hembra</option>
+                                                <option value="male">Macho</option>
                                             </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <p style="text-align: left">Edad: </p>
+                                            <input type="number" id="age">
+                                        </div>
                                     </div>
-                                    <div class="col-6">
-                                        <p style="text-align: left">Sexo: </p>
-                                        <select class="selectSex">
-                                            <option value="female">Hembra</option>
-                                            <option value="male">Macho</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="text-align: left">Edad: </p>
-                                        <input type="number" id="age">
-                                    </div>
-                                    <div class="col-12">
-                                        <p style="text-align: left">Dato importante sobre tu mascota:</p>
-                                        <textarea></textarea>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p style="text-align: left">Dato importante sobre tu mascota:</p>
+                                            <textarea></textarea>
+                                        </div>
                                     </div>
                                </div>
                             </div>
