@@ -39,6 +39,8 @@
                     <input type="email" id="emailSignIn" placeholder="Ingrese su Email"><br><br>
                     <p style="text-align: left">Contraseña: </p>
                     <input type="password" id="passwordSignIn" placeholder="Ingrese su Contraseña"><br><br>
+                    <p class="alerta" id="emailAlert">Email o Contraseña incorrecta</p>
+                    <p class="alerta" id="emptyAlert">Por favor complete el formulario</p>
                     <button id="signIn" class="btn">Iniciar Sesión</button>
                     <button id="register" class="btn">Registrar</button>
                 </div>
@@ -58,7 +60,8 @@
                                 <div class="row">
                                     <div class="col-1"></div>
                                     <div class="col-10"> <div id="owner" class="Owner">
-                                            <h1>Dueño de la Mascota</h1>
+                                        <form action="submit">   
+                                        <h1>Dueño de la Mascota</h1>
                                              <p style="text-align: left">Usuario: </p>
                                             <input type="text" id="nameUser"><br>
                                             <p style="text-align: left">Email: </p>
@@ -67,6 +70,9 @@
                                             <input type="password" id="passwordRegister"><br>
                                             <p style="text-align: left">Confimar Contraseña: </p>
                                             <input type="password" id="confirmPassword"><br>
+                                            <p class="alerta" id="passwordAlert">Contraseñas no coinciden</p>
+                                            <p class="alerta" id="completeAlert">Por favor complete el formulario</p>
+                                        </form> 
                                         </div>
                                         </div>
                                <div class="col-1"></div>
@@ -83,7 +89,6 @@
                                                 <option value="cat">Gato</option>
                                                 <option value="Rabbit">Conejo</option>
                                                 <option value="turtle">Tortuga</option>
-                                                <option value="other">tu Esposo</option>
                                             </select>
                                     </div>
                                     <div class="col-6">

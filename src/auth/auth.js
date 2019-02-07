@@ -64,7 +64,11 @@ export const loginUser = (emailFromUser, passwordFromUser) => {
        
       })
       .catch((error) => {
-        console.log("Error > "+error.message);
+        if(emailFromUser === "" || passwordFromUser === ""){
+          document.getElementById("emptyAlert").style.display= "block";
+        }else{
+          document.getElementById("emailAlert").style.display= "block";
+        }
       });
   }
   //::::::::::::::::::::::::::::::::::::::LOG OUT::::::::::::::::::::::::::::::::::::::::::::::::
