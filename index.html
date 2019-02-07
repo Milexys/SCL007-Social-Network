@@ -17,14 +17,14 @@
   <header class="header">
     <div class="topnav" id="myTopnav">
       <a href="#home">Home</a>
-      <a href="#news">Quiénes somos</a>
+      <a href="#aboutUs">Quiénes somos</a>
       <a href="#contact">Contacto</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
     </div>  
   </header>
-  <main>
+  <main id="root">
     <div class="container">
         <div class="row">
             <div class="col-3"></div>
@@ -115,9 +115,15 @@
         </div>
     </div>
 </main>
+<section>
+    <div id="logIn" class="logIn">
+        <button class="btn" id="signOut">Cerrar Sesion</button>
+    </div>
+</section>
 <footer></footer>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 <script>
 // Initialize Firebase
 var config = {
@@ -129,6 +135,8 @@ var config = {
     messagingSenderId: "678447862491"
 };
 firebase.initializeApp(config);
+const auth = firebase.auth();
+const db =firebase.firestore();
 </script>
 <script src="main.js" type="module"></script>
 <script src="auth/auth.js" type="module"></script>
