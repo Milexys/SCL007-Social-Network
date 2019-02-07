@@ -1,3 +1,6 @@
+let main = document.getElementById("root");
+let section = document.getElementById("logIn");
+//::::::::::::::::::::::::::::::::::::::FACEBOOK:::::::::::::::::::::::::::::::::::::::::::::::::::
 facebook.addEventListener("click", () => {
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -17,6 +20,7 @@ facebook.addEventListener("click", () => {
       console.error(JSON.stringify(error.message));
     });
   });
+  //:::::::::::::::::::::::::::::::::::::::::::::GOOGLE::::::::::::::::::::::::::::::::::::::::::::
  document.getElementById("google").addEventListener("click", () => {
     console.log("click")
     const provider = new firebase.auth.GoogleAuthProvider();provider
@@ -27,11 +31,11 @@ facebook.addEventListener("click", () => {
   console.log(user);
   });
   });
-
+//:::::::::::::::::::::::::::::CHECKOUT::::::::::::::::::::::::::::::::::::::::::::::::::::
   export const checkAuthState = (callback) => {
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-        console.log("Hay un usuario > "+JSON.stringify(user));
+        console.log("Hay un usuario");
         callback(user);
       }else{
         console.log("No está logueado");
@@ -39,9 +43,13 @@ facebook.addEventListener("click", () => {
       }
     })
   };
-
+//:::::::::::::::::::::::::::::::::::::::::::SIGN UP::::::::::::::::::::::::::::::::::::::::::::::::
 export const registerUser = (email, password) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(){
+      verification();
+    })
+    .catch(function(error) {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -49,13 +57,31 @@ export const registerUser = (email, password) => {
         // ...
 });
 }
-
+//:::::::::::::::::::::::::::::::::LOGIN USER:::::::::::::::::::::::::::::::::::::::::::::::::
 export const loginUser = (emailFromUser, passwordFromUser) => {
     firebase.auth().signInWithEmailAndPassword(emailFromUser, passwordFromUser)
       .then((user)=>{
-        console.log("Usuario logueado > "+JSON.stringify(user));
+       
       })
       .catch((error) => {
-        console.error("Error > "+error.message);
+        console.log("Error > "+error.message);
       });
   }
+  //::::::::::::::::::::::::::::::::::::::LOG OUT::::::::::::::::::::::::::::::::::::::::::::::::
+  let logOut = document.getElementById("signOut");
+
+  logOut.addEventListener("click", () => {
+    firebase.auth().signOut()
+    .catch(function(error) {
+      console.log("Error > "+error.message);
+    });
+  })
+  //:::::::::::::::::::::::::::::SEND VERIFICATION EMAIL::::::::::::::::::::::::::::::::::::::::
+  const verification = () =>{
+  var user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(function() {
+    console.log("enviando...")
+  }).catch(function(error) {
+    console.log(error);
+  });
+}

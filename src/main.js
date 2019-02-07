@@ -11,6 +11,8 @@ let modal = document.getElementById("mimodal");
 let flex = document.getElementById("flex");
 let openModal = document.getElementById("register");
 let closeModal = document.getElementById("close");
+let main = document.getElementById("root");
+let section = document.getElementById("logIn");
 
 openModal.addEventListener("click", () =>{
 modal.style.display = "block";
@@ -44,32 +46,28 @@ window.onload = () => {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log ("existe usuario activo");
-        const displayName = user.displayName; mensaje()
-        const email = user.email;
-        
-        const emailVerified = user.emailVerified;
-        const photoURL = user.photoURL;
-        const isAnonymous = user.isAnonymous;
-        const uid = user.uid;
-        const providerData = user.providerData;
-        console.log ("no existe usuario activo");
-        console.log(email,+displayName,+" "+emailVerified,+photoURL,+isAnonymous,+uid,+providerData);
-       
+        if(user.emailVerified){
+          main.style.display = "none";
+          section.style.display = "block";
+        }
+      modal.style.display = "none";    
       } else {
-        // User is signed out.
-        // ...
+        console.log ("no existe usuario activo");  
+      main.style.display = "block";
+      section.style.display = "none";
       }
     });
    }); 
 }
+//:::::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::::::::::::::::::
 const register = () => {
  
   const email = document.getElementById("emailRegister").value; 
   const password = document.getElementById("passwordRegister").value; 
   registerUser(email, password);
-  modal.style.display = "none";
    }
    document.getElementById("registerButton").addEventListener("click", register);
+//:::::::::::::::::::::::::::::::::::::::::::LOGIN:::::::::::::::::::::::::::::::::::::::::::::
 
 const loginUserWithEmailAndPassword = () => {
     const emailFromUser = emailSignIn.value;
@@ -77,5 +75,8 @@ const loginUserWithEmailAndPassword = () => {
     loginUser(emailFromUser, passwordFromUser);
   };
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
+
+//se salio de control
+
 
 

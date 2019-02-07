@@ -2,8 +2,6 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: url(http://www.veterinariacharruas.com/wp-content/uploads/2014/07/Pet-care-site-Background.gif);
-    
-
   }
   
   .topnav {
@@ -162,7 +160,9 @@ body {
     #number{
       width: 100%;
     }
-
+.logIn{
+  display: none;
+}
     select{
       width: 100%;
     }
