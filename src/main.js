@@ -29,7 +29,7 @@ modal.style.display = "none";
 let nextButton = document.getElementById("next");
 let pets =document.getElementById("pets");
 let owner = document.getElementById("owner");
-let registerButton = document.getElementById("registerButton");
+let registerButton = document.getElementById("registerButton")
 
 
 nextButton.addEventListener("click", () =>{
