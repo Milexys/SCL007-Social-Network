@@ -265,15 +265,10 @@ body {
       text-align: left;
     }
     .contenido-modal{
-      width: 80%;
+      width: 100%;
     }
     .welcome{
       font-size: 20px;
     }
   }
-  @media screen and (max-width: 900px) {
-   
-    .contenido-modal{
-      width: 80%;
-    }
-  }
+  
