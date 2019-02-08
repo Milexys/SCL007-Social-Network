@@ -129,25 +129,47 @@
 <section>
     <div id="logIn" class="logIn">
         <button class="btn" id="signOut">Cerrar Sesion</button>
+        <div class="container">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="welcome">
+                        <h1>Bienvenido a SocialPET</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <div class="aside">
+                        <a href="#">Amigos</a>
+                        <a href="#">Veterinarios</a>
+                        <a href="#">Paseadores Caninos</a>
+                        <a href="#">Peluquerías para Mascotas</a>
+                        <a href="#">Eventos para mascotas</a>
+                    </div>
+                </div>
+                    <div class="col-7">
+                                <div class="post">
+                                    <p>
+                                        ¿Quieres hacer una Publicación?
+                                    </p>
+                                    <textarea id="postText" class="postText" placeholder="Escribe aquí lo que desees publicar..."></textarea>
+                                        <select>                    
+                                            <option value="public">Público</option>
+                                            <option value="private">Privado</option>
+                                        </select>                        
+                                    <button id="postBtn" class="btn">Publicar</button>
+                        </div>
+                    </div>                
+            </div>
+        </div>
     </div>
 </section>
 <footer></footer>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
-<script>
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBoEkrJVmd5cNJQAd-drkN8_L5mRUIa-74",
-    authDomain: "pet-social-network-e35d0.firebaseapp.com",
-    databaseURL: "https://pet-social-network-e35d0.firebaseio.com",
-    projectId: "pet-social-network-e35d0",
-    storageBucket: "pet-social-network-e35d0.appspot.com",
-    messagingSenderId: "678447862491"
-};
-firebase.initializeApp(config);
-const auth = firebase.auth();
-</script>
 <script src="main.js" type="module"></script>
 <script src="validate.js"></script>
 <script src="responsive.js"></script>
