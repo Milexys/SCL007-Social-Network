@@ -110,7 +110,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <p style="text-align: left">Dato importante sobre tu mascota:</p>
-                                            <textarea></textarea>
+                                            <textarea id="petInformation"></textarea>
                                         </div>
                                     </div>
                                </div>
@@ -151,21 +151,31 @@
                     </div>
                 </div>
                     <div class="col-7">
+                        <div class="row">
+                            <div class="col-12">
                                 <div class="post">
                                     <p>
                                         ¿Quieres hacer una Publicación?
                                     </p>
                                     <textarea id="postText" class="postText" placeholder="Escribe aquí lo que desees publicar..."></textarea>
-                                        <select>                    
-                                            <option value="public">Público</option>
-                                            <option value="private">Privado</option>
-                                        </select>                        
+                                    <select>                    
+                                        <option value="public">Público</option>
+                                        <option value="private">Privado</option>
+                                    </select>                        
                                     <button id="postBtn" class="btn">Publicar</button>
-                        </div>
-                    </div>                
-            </div>
+                                </div>
+                            </div>
+                        </div>                       
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="postear" class="postear">
+                                </div>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+             </div>
         </div>
-    </div>
 </section>
 <footer></footer>
 <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
