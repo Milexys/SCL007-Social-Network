@@ -1,61 +1,4 @@
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-let modal = document.getElementById("mimodal");
-let flex = document.getElementById("flex");
-let openModal = document.getElementById("register");
-let closeModal = document.getElementById("close");
-let main = document.getElementById("root");
-let section = document.getElementById("logIn");
-
-openModal.addEventListener("click", () =>{
-modal.style.display = "block";
-});
-closeModal.addEventListener("click", () =>{
-modal.style.display = "none";
-});
-window.addEventListener("click", (e) =>{
-if (e.target === flex){
-modal.style.display = "none";
-}
-});
-
-let nextButton = document.getElementById("next");
-let pets =document.getElementById("pets");
-let owner = document.getElementById("owner");
-let registerButton = document.getElementById("registerButton")
-let passwordAlert = document.getElementById("passwordAlert");
-let password = document.getElementById("passwordRegister");
-let confirmPassword = document.getElementById("confirmPassword");
-let completeForm = document.getElementById("completeAlert");
-let email = document.getElementById("emailRegister");
-let userName = document.getElementById("nameUser");
-
-
-
-nextButton.addEventListener("click", () =>{
-if( password.value !== confirmPassword.value){
-passwordAlert.style.display="block";
-completeForm.style.display="none";
-  }else if(password.value ==="" || confirmPassword.value === "" || email.value ==="" || userName.value ==="" ){
-  completeForm.style.display="block";
-  passwordAlert.style.display="none";
-}
-else{
-pets.style.display = "block";
-owner.style.display = "none";
-nextButton.style.display = "none";
-registerButton.style.display = "block";
-}
-})
-//:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-import {checkAuthState, registerUser, loginUser} from './auth/auth.js';
+import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
 
 window.onload = () => {
   checkAuthState((user)=>{
@@ -63,14 +6,14 @@ window.onload = () => {
       if (user) {
         console.log ("existe usuario activo");
         if(user.emailVerified){
-          main.style.display = "none";
-          section.style.display = "block";
+          document.getElementById("root").style.display = "none";
+          document.getElementById("logIn").style.display = "block";
         }
       modal.style.display = "none";    
       } else {
         console.log ("no existe usuario activo");  
-      main.style.display = "block";
-      section.style.display = "none";
+        document.getElementById("root").style.display = "block";
+        document.getElementById("logIn").style.display = "none";
       }
     });
    }); 
@@ -92,7 +35,10 @@ const loginUserWithEmailAndPassword = () => {
   };
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
-//se salio de control
+  document.getElementById("facebook").addEventListener("click", facebookLogin);
 
+  document.getElementById("google").addEventListener("click", googleLogin);
+
+  document.getElementById("signOut").addEventListener("click", logOut);
 
 
