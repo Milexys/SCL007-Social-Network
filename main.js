@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", event => {
+  const config = {
+    apiKey: "AIzaSyBoEkrJVmd5cNJQAd-drkN8_L5mRUIa-74",
+    authDomain: "pet-social-network-e35d0.firebaseapp.com",
+    databaseURL: "https://pet-social-network-e35d0.firebaseio.com",
+    projectId: "pet-social-network-e35d0",
+    storageBucket: "pet-social-network-e35d0.appspot.com",
+    messagingSenderId: "678447862491"
+};
+firebase.initializeApp(config);
+
+})
 import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
 
 window.onload = () => {
