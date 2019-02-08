@@ -8,10 +8,11 @@ document.addEventListener("DOMContentLoaded", event => {
     messagingSenderId: "678447862491"
 };
 firebase.initializeApp(config);
-
+let database = firebase.database();
 })
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
-
+import {savePosting, readPost} from './data/data.js'
 window.onload = () => {
   checkAuthState((user)=>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -20,6 +21,7 @@ window.onload = () => {
         if(user.emailVerified){
           document.getElementById("root").style.display = "none";
           document.getElementById("logIn").style.display = "block";
+          readPostFromDatabase();
         }
       modal.style.display = "none";    
       } else {
@@ -36,6 +38,7 @@ const register = () => {
   const email = document.getElementById("emailRegister").value; 
   const password = document.getElementById("passwordRegister").value; 
   registerUser(email, password);
+  //petData();
    }
    document.getElementById("registerButton").addEventListener("click", register);
 //:::::::::::::::::::::::::::::::::::::::::::LOGIN:::::::::::::::::::::::::::::::::::::::::::::
@@ -52,5 +55,42 @@ const loginUserWithEmailAndPassword = () => {
   document.getElementById("google").addEventListener("click", googleLogin);
 
   document.getElementById("signOut").addEventListener("click", logOut);
+  //::::::::::::::::::::::::::::::::::::REGISTER DATA::::::::::::::::::::::::::::::::::::::::::::
+ /* const petData = () => {
+    let petOwner = document.getElementById("petOwner").value;
+    let petName = document.getElementById("petName").value;
+    let petType = document.getElementById("petType").value;
+    let petSex = document.getElementById("petSex").value;
+    let petAge = document.getElementById("petAge").value;
+    let petInformation = document.getElementById("petInformation").value;
+    savePet(petOwner, petName, petType, petSex, petAge, petInformation);
+  }*/
+  //::::::::::::::::::::::::::::::::::::::POST::::::::::::::::::::::::::::::::::::::::::::::::
+  const posting = () => {
+    let postText = document.getElementById("postText").value;
+    let userName = firebase.auth().currentUser.email;
+    savePosting(postText, userName);
+  } 
+  document.getElementById("postBtn").addEventListener("click", posting);
+ 
+  const readPostFromDatabase = () => {
+    console.log("leyendo post");
+    readPost((post)=>
+    document.getElementById("postear").innerHTML = 
+    `
+    <div class="postBox">
+      <h4>Usuario: ${post.val().user}</h4>
+      <div id="postBox">
+        <p>${post.val().posting}</p>
+      </div>
+    </div>
+    `
+    + document.getElementById("postear").innerHTML 
+    )
+  }
+
+
+
+
 
 
