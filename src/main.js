@@ -79,9 +79,9 @@ const loginUserWithEmailAndPassword = () => {
     document.getElementById("postear").innerHTML = 
     `
     <div class="postBox">
-      <h4>Usuario: ${post.val().user}</h4>
+      <h4><b>Usuario:</b>${post.val().user}</h4>
       <div id="postBox">
-        <p>${post.val().posting}</p>
+        <p><b>Mensaje:</b>${post.val().posting}</p>
       </div>
     </div>
     `
