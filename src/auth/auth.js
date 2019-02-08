@@ -44,8 +44,10 @@ export const loginUser = (emailFromUser, passwordFromUser) => {
       .catch((error) => {
         if(emailFromUser === "" || passwordFromUser === ""){
           document.getElementById("emptyAlert").style.display= "block";
+          document.getElementById("emailAlert").style.display= "none";
         }else{
           document.getElementById("emailAlert").style.display= "block";
+          document.getElementById("emptyAlert").style.display= "none";
         }
       });
   }
