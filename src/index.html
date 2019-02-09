@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
   </head>
 
 <body>
-  <header class="header">
+  <!--<header class="header">
     <div class="topnav" id="myTopnav">
       <a href="#home">Inicio</a>
       <a href="#aboutUs">Quiénes somos</a>
@@ -23,29 +23,47 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>  
-  </header>
+  </header>-->
   <main id="root">
-    <div class="container">
+      <section class="pictureBackground">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <div class="card">
-                    <div class="title">
-                        <h1>Social PET</h1>
-                    </div>
-                    <button id="facebook" class="facebookBtn"><i class="fa fa-facebook-square left"></i> Iniciar con Facebook</button><br>
-                    <button id="google" class="googleBtn"><i class="fa fa-google"></i> Iniciar con Google</button><br>
-                    <p style="text-align: left">Email: </p>
-                    <input type="email" id="emailSignIn" placeholder="Ingrese su Email"><br><br>
-                    <p style="text-align: left">Contraseña: </p>
-                    <input type="password" id="passwordSignIn" placeholder="Ingrese su Contraseña"><br><br>
-                    <p class="alerta" id="emailAlert">Email o Contraseña incorrecta</p>
-                    <p class="alerta" id="emptyAlert">Por favor complete el formulario</p>
-                    <button id="signIn" class="btn">Iniciar Sesión</button>
-                    <button id="register" class="btn">Registrar</button>
+            <div class="col-7">
+                <div class="imageBack">                
                 </div>
             </div>
-            <div class="col-3"></div>
+            <div class="col-5">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title">
+                            <h1>Social PET</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="socialLink">
+                                <button id="facebook" class="facebookBtn"><i class="fa fa-facebook-square left"></i> Iniciar con Facebook</button><br>
+                                <button id="google" class="googleBtn"><i class="fa fa-google"></i> Iniciar con Google</button><br>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <p style="text-align: left">Email: </p>
+                            <input type="email" id="emailSignIn" placeholder="Ingrese su Email"><br><br>
+                            <p style="text-align: left">Contraseña: </p>
+                            <input type="password" id="passwordSignIn" placeholder="Ingrese su Contraseña"><br><br>
+                            <p class="alerta" id="emailAlert">Email o Contraseña incorrecta</p>
+                            <p class="alerta" id="emptyAlert">Por favor complete el formulario</p>
+                            <button id="signIn" class="btn">Iniciar Sesión</button>
+                            <p>¿No tienes cuenta?</p>
+                            <a id="register" class="register" href="#">Registrate AQUÍ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="container">
            <div id="mimodal" class="modal">
                <div id="flex" class="flex">
                    <div class="contenido-modal">
