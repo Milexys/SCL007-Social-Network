@@ -279,7 +279,8 @@ body {
       background-color: white;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384);
       border-radius: 10px;
-      border: 1px solid #fdb455;
+      border: 1px solid #3697A5;
+      float: left;
     }
     .aside a{
       display: block;
@@ -289,10 +290,7 @@ body {
       text-decoration: none;
       font-size: 17px;
     }
-    .aside a:hover {
-      background: #fdb455;
-      color: white;
-    }
+    
     .post{
       text-align: center;
       width: 100%;
@@ -327,6 +325,34 @@ body {
     .horizontal{
       display: none;
     }
+    .menu li a{   
+       background-color:#40b4c4;
+       color:#ffff;
+       padding: 10px 15px;
+       display: block;
+      }
+      .menu a:hover {
+        background: #3697A5;
+        color: white;
+      }
+      li{
+        list-style: none;
+      }
+      .menu li ul{
+        display:none;
+        position: absolute;
+        min-width: 260px;;
+      }
+      .menu li:hover > ul{
+        display: block;
+      }
+      .menu li ul li{
+        position: relative;
+      }
+      .menu li ul li ul{
+        right:-260px;
+        top: 0px;
+      }
     @keyframes modal{
       from{
         bottom: -330px; 
