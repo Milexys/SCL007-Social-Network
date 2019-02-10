@@ -347,6 +347,9 @@ body {
       background: #ffff;
       color: grey;
     }
+    .postTextName{
+      margin-left: -0.1%;
+    }
     .horizontal{
       display: none;
     }
