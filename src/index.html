@@ -14,7 +14,7 @@
   </head>
 
 <body>
-  <!--<header class="header">
+  <header class="header">
     <div class="topnav" id="myTopnav">
       <a href="#home">Inicio</a>
       <a href="#aboutUs">Quiénes somos</a>
@@ -23,15 +23,29 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>  
-  </header>-->
+  </header>
   <main id="root">
-      <section class="pictureBackground">
+      <section class="indexPage">
         <div class="row">
-            <div class="col-7">
-                <div class="imageBack">                
+            <div class="col-5">
+                <div class="imageBack">  
+                    <img src="/src/mascotas.jpg">            
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-7">
+                <div class="welcomeText">
+                    <h1>Bienvenidos a SocialPET</h1>
+                    <div class="texto">
+                        <div class="row">
+                            <div class="col-6">
+                                    <p>SocialPet es mucho más que una red social para mascotas. Es todo un universo en torno al mundo de los perros, gatos, pájaros, hamsters, etc. <b>¡Ellos son lo primero!</b></p>
+                            </div>
+                            <div class="col-6">
+                                    <p>Además podrás encontrar <b>empresas y servicios profesionales</b> del sector de los animales de compañía, ayudar a otros animales que lo están pasando mal y mucho más.</p>
+                            </div>
+                        </div> 
+                    </div>                   
+                </div>
                 <div class="card">
                     <div class="row">
                         <div class="col-12">
@@ -41,22 +55,28 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-5-5">
                             <div class="socialLink">
-                                <button id="facebook" class="facebookBtn"><i class="fa fa-facebook-square left"></i> Iniciar con Facebook</button><br>
-                                <button id="google" class="googleBtn"><i class="fa fa-google"></i> Iniciar con Google</button><br>
+                                <p>Entra con tu red social favorita...</p>
+                                <button id="facebook" class="facebookBtn"><i class="fa fa-facebook-square left"></i> Inicia sesión con Facebook</button><br>
+                                <button id="google" class="googleBtn"><i class="fa fa-google"></i> Inicia sesión con Google</button><br>
                             </div>
+                            <hr class="horizontal">
                         </div>
-                        <div class="col-6">
-                            <p style="text-align: left">Email: </p>
-                            <input type="email" id="emailSignIn" placeholder="Ingrese su Email"><br><br>
-                            <p style="text-align: left">Contraseña: </p>
-                            <input type="password" id="passwordSignIn" placeholder="Ingrese su Contraseña"><br><br>
-                            <p class="alerta" id="emailAlert">Email o Contraseña incorrecta</p>
-                            <p class="alerta" id="emptyAlert">Por favor complete el formulario</p>
-                            <button id="signIn" class="btn">Iniciar Sesión</button>
-                            <p>¿No tienes cuenta?</p>
-                            <a id="register" class="register" href="#">Registrate AQUÍ</a>
+                        <div class="col-1">
+                            <hr class="vertical" width="1" size="175">
+                        </div>
+                        <div class="col-5-5">
+                            <div class="login">
+                                <p>...o entra con tu correo y contraseña</p>                           
+                                <input type="email" id="emailSignIn" placeholder="Correo"><br>                           
+                                <input type="password" id="passwordSignIn" placeholder="Contraseña"><br>
+                                <h6 class="alerta" id="emailAlert">Email o Contraseña incorrecta</h6>
+                                <h6 class="alerta" id="emptyAlert">Por favor complete el formulario</h6>
+                                <button id="signIn" class="btn">Iniciar Sesión</button>
+                                <p>¿No tienes cuenta?</p>
+                                <a id="register" class="register" href="#">Registrate AQUÍ</a>
+                            </div>
                         </div>
                     </div>
                 </div>

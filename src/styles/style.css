@@ -1,12 +1,11 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: url(http://www.veterinariacharruas.com/wp-content/uploads/2014/07/Pet-care-site-Background.gif);
-  }
+    }
   
   .topnav {
     overflow: hidden;
-    background-color: #fdb455;
+    background-color: #40b4c4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384);
   }
   
@@ -22,77 +21,106 @@ body {
   
   .topnav a:hover {
     background-color: rgb(223, 242, 245);
-    color: black;
+    color: #40b4c4;
+    font-weight: bold;
   }
   
   .topnav .icon {
     display: none;
   }
+  .imageBack img{
+    width: 100%;
+    mix-blend-mode: lighten;
+    filter: grayscale(50%);
+  }
+  .welcomeText{
+    width: 100%;
+    text-align: center;
+  }
+  .welcomeText h1{
+    font-family: Acme;
+    color: #40b4c4;
+    font-size: 50px;
+  }
+  .welcomeText p{
+    font-size: 15px;
+    text-align: justify;
+  }
+  .welcomeText p b{
+    color: #40b4c4;
+  }
   .card{
       text-align: center;
       max-width: 100%;
       height: 100%;
-      background: white;
+      background: rgb(237, 247, 252);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384); 
       padding: 10px;
       margin: 0 auto;
+      border-radius: 10px;
+      border: 1px solid #40b4c4;
   }
   .card a{
     text-decoration: none;
-    color:#51d9eb;
+    color:#40b4c4;
   }
   .card a:hover{
-    color:#40b4c4;
     font-weight: bold;
   }
   .card h1{
       font-family: Acme;
   }
+  .card p{
+    font-size: 15px;
+    color: gray;
+  }
   .title{
-      background: #51d9eb;
+      background: #40b4c4;
+      border-radius: 10px;
       width: 100%;
       color: white;
   }
-  input{
+  .card input{
       width: 100%;
-      font-size: 15px;
+      font-size: 14px;
+      border-radius: 2px;
+      border: 1px solid #40b4c4;
+      margin: 10px;
   }
   .btn{
-      width: 30%;
+      width: 80%;
       margin: 10px;
-      border-radius: 5px;
-      border: 2px solid #51d9eb;
-      background: white;
+      border-radius: 10px;
+      background: #40b4c4;
       padding: 5px;
       font-size: 15px;
+      color: white;
   }
   .btn:hover{
-      background:#bfe2f7;
+      background:rgba(255, 255, 255, 0.78);
       color: rgb(23, 145, 167); 
       cursor: pointer;
       font-weight: bold;
   }
   .facebookBtn{
-    width: 80%;
+    width: 93%;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     background: #1d67ac;
     color: white;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px; 
   }
   .facebookBtn:hover{
     cursor: pointer; 
   }
   .googleBtn{
-    width: 80%;
+    width: 93%;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     background: #f02727;
     color: white;
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     padding: 5px; 
   }
   .googleBtn:hover{
@@ -168,9 +196,9 @@ body {
     #number{
       width: 100%;
     }
-.logIn{
-  display: none;
-}
+    .logIn{
+      display: none;
+    }
     select{
       width: 100%;
     }
@@ -242,6 +270,9 @@ body {
       background: #fdb455;
       color: white;
     }
+    .horizontal{
+      display: none;
+    }
     @keyframes modal{
       from{
         bottom: -330px; 
@@ -277,6 +308,27 @@ body {
     }
     .welcome{
       font-size: 20px;
+    }
+    .horizontal{
+      width: 100%;
+      margin-top: 10px;
+      display: block;
+    }
+    .vertical{
+      display:none;
+      text-align: center;
+    }
+    .facebookBtn{
+      width: 80%;
+    }
+    .googleBtn{
+      width: 80%;
+    }
+    .imageBack{
+      display: none;
+    }
+    .texto{
+      display: none;
     }
   }
   
