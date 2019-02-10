@@ -68,7 +68,7 @@ const loginUserWithEmailAndPassword = () => {
   //::::::::::::::::::::::::::::::::::::::POST::::::::::::::::::::::::::::::::::::::::::::::::
   const posting = () => {
     let postText = document.getElementById("postText").value;
-    let userName = firebase.auth().currentUser.email;
+    let userName = document.getElementById("postName").value;
     savePosting(postText, userName);
   } 
   document.getElementById("postBtn").addEventListener("click", posting);

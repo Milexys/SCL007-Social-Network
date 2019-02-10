@@ -323,6 +323,13 @@ body {
       min-width: 100%;
       height: 100px;
     }
+    .postTextName{
+      margin:1%;
+      max-width: 100%;
+      min-width: 100%;
+      height:25%;
+      ; 
+    }
     .postear{
       max-width: 100%;
       border: 1px solid #fdb455;
