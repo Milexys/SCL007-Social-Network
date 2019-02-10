@@ -119,23 +119,6 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
-
-.btnmuro{
-  width: 25%;
-  border-radius: 10px;
-  background: #40b4c4;
-  padding: 5px;
-  font-size: 15px;
-  color: white;
-  text-align: center;
-}
-
-.btnmuro:hover{
-  background:rgba(255, 255, 255, 0.78);
-  color: rgb(23, 145, 167); 
-  cursor: pointer;
-  font-weight: bold;
-}
   
   .facebookBtn{
     width: 93%;
@@ -349,13 +332,13 @@ body {
       padding: 10px;
     }
     .postBox{
-      width: 100%;
+      width: 90%;
       border: 1px solid #fdb455;
       border-radius: 10px;
-      margin: 5px;
-      padding: 4px;
-      background: #fdb455;
-      color: white;
+      margin: 20px;
+      padding: 10px;
+      background: #ffff;
+      color: grey;
     }
     .horizontal{
       display: none;
