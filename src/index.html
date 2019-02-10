@@ -96,7 +96,6 @@
                                 <div class="row">            
                                     <div class="col-12"> 
                                         <div id="owner" class="owner">
-                                            
                                                 <h2>Dueño de la Mascota</h2>
                                                 <hr>
                                                 <p style="text-align: left">Nombre: </p>
@@ -110,15 +109,15 @@
                                                 <h6 class="alerta" id="passwordAlert">Contraseñas no coinciden</h6>
                                                 <h6 class="alerta" id="completeAlert">Por favor complete el formulario</h6>
                                                 <button id="next" class="btn">Siguiente</button>
-                    
                                         </div>
                                     </div>                              
                                <div id="pets" class="pets">
-                                    <h1>Registro de la Mascota</h1>
+                                    <h2>Registro de la Mascota</h2>
+                                    <hr>
                                     <div class="row">
                                         <div class="col-6">
                                             <p style="text-align: left">Nombre de la Mascota: </p>
-                                            <input type="text" name="" id="petName">
+                                            <input type="text" id="petName">
                                         </div>
                                         <div class="col-6">
                                                 <p style="text-align: left">Tipo de Mascota: </p>
@@ -137,6 +136,7 @@
                                             <select class="selectSex" id="petSex">
                                                 <option value="female">Hembra</option>
                                                 <option value="male">Macho</option>
+                                                <option value="unknow">Desconocido</option>
                                             </select>
                                         </div>
                                         <div class="col-6">
@@ -144,19 +144,19 @@
                                             <input type="number" id="petAge">
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row">                              
                                         <div class="col-12">
                                             <p style="text-align: left">Dato importante sobre tu mascota:</p>
                                             <textarea id="petInformation"></textarea>
+                                            <a href="#">¿Quieres agregar otra mascota?</a>
                                         </div>
                                     </div>
+                                    <button id="registerButton" class="register2">Registrar</button>
                                </div>
                             </div>
                         </div>
                         </div>
-                        <div class="footer">
-                                
-                             <button id="registerButton" class="register2">Registrar</button>
+                        <div class="footer">  
                         </div>
                     </div>
                 </div>

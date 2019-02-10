@@ -197,34 +197,66 @@ body {
       color: gray;
       font-size: 15px;
     }
-    .register2{
-      display: none;
-      width: 30%;
-      border-radius: 5px;
-      border: 2px solid #fdb455;
-      background: white;
-      padding: 5px;
-      font-size: 15px;
-    }
-    .register2:hover{
-      background:#fdb455;
-      color: white; 
-      cursor: pointer;
-      font-weight: bold;
-  }
     .pets{
       display:none;
-    }
-    #number{
       width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+    .pets h2{
+      color: gray
+    }
+    .pets hr{
+      margin: 10px;
+    }
+    .pets select{
+      width: 100%;
+      background: white;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
+    }
+    .pets input{
+      width: 100%;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
+      margin: 5px;
+    }
+    .pets textarea{
+      width: 100%;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
+    }
+    .pets p{
+      color:gray;
+      font-size: 15px;
+    }
+    .pets a{
+      text-decoration: none;
+      color:#40b4c4;
+      font-size: 14px;
+    }
+    .pets a:hover{
+      font-weight: bold;
+    }
+    .register2{
+      width: 80%;
+      margin: 10px;
+      border-radius: 10px;
+      background: #40b4c4;
+      padding: 5px;
+      font-size: 15px;
+      color: white;
+    }
+    .register2:hover{
+      background:rgba(255, 255, 255, 0.78);
+      color: rgb(23, 145, 167); 
+      cursor: pointer;
+      font-weight: bold;
     }
     .logIn{
       display: none;
     }
     select{
-      width: 100%;
-    }
-    textarea{
       width: 100%;
     }
     .alerta{
