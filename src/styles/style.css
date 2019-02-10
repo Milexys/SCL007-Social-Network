@@ -119,6 +119,23 @@ body {
     cursor: pointer;
     font-weight: bold;
 }
+
+.btnmuro{
+  width: 25%;
+  border-radius: 10px;
+  background: #40b4c4;
+  padding: 5px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+.btnmuro:hover{
+  background:rgba(255, 255, 255, 0.78);
+  color: rgb(23, 145, 167); 
+  cursor: pointer;
+  font-weight: bold;
+}
   
   .facebookBtn{
     width: 93%;
