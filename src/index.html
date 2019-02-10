@@ -88,32 +88,31 @@
                <div id="flex" class="flex">
                    <div class="contenido-modal">
                        <div class="modal-header">
-                           <div class="row">
-                                <div class="col-11"><h1>SocialPET | Registro</h1></div>
-                                <div class="col-1"><span class="close" id="close">&times;</span></div>
-                           </div>
+                           <div><h1>Registro</h1></div>                            
+                            <!--<div class="spans"><span class="close" id="close">&times;</span></div> -->                           
                        </div>
                         <div class="modal-body">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col-1"></div>
-                                    <div class="col-10"> <div id="owner" class="Owner">
-                                        <form action="submit">   
-                                        <h1>Dueño de la Mascota</h1>
-                                             <p style="text-align: left">Usuario: </p>
-                                            <input type="text" id="petOwner"><br>
-                                            <p style="text-align: left">Email: </p>
-                                            <input type="email" id="emailRegister"><br>
-                                            <p style="text-align: left">Contraseña: </p>
-                                            <input type="password" id="passwordRegister"><br>
-                                            <p style="text-align: left">Confimar Contraseña: </p>
-                                            <input type="password" id="confirmPassword"><br>
-                                            <p class="alerta" id="passwordAlert">Contraseñas no coinciden</p>
-                                            <p class="alerta" id="completeAlert">Por favor complete el formulario</p>
-                                        </form> 
+                                <div class="row">            
+                                    <div class="col-12"> 
+                                        <div id="owner" class="owner">
+                                            
+                                                <h2>Dueño de la Mascota</h2>
+                                                <hr>
+                                                <p style="text-align: left">Nombre: </p>
+                                                <input type="text" id="petOwner"><br>
+                                                <p style="text-align: left">Correo: </p>
+                                                <input type="email" id="emailRegister"><br>
+                                                <p style="text-align: left">Contraseña: </p>
+                                                <input type="password" id="passwordRegister"><br>
+                                                <p style="text-align: left">Confimar Contraseña: </p>
+                                                <input type="password" id="confirmPassword"><br>
+                                                <h6 class="alerta" id="passwordAlert">Contraseñas no coinciden</h6>
+                                                <h6 class="alerta" id="completeAlert">Por favor complete el formulario</h6>
+                                                <button id="next" class="btn">Siguiente</button>
+                    
                                         </div>
-                                        </div>
-                               <div class="col-1"></div>
+                                    </div>                              
                                <div id="pets" class="pets">
                                     <h1>Registro de la Mascota</h1>
                                     <div class="row">
@@ -156,7 +155,7 @@
                         </div>
                         </div>
                         <div class="footer">
-                                <button id="next" class="btn">Siguiente</button>
+                                
                              <button id="registerButton" class="register2">Registrar</button>
                         </div>
                     </div>

@@ -50,15 +50,15 @@ body {
     color: #40b4c4;
   }
   .card{
-      text-align: center;
-      max-width: 100%;
-      height: 100%;
-      background: rgb(237, 247, 252);
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384); 
-      padding: 10px;
-      margin: 0 auto;
-      border-radius: 10px;
-      border: 1px solid #40b4c4;
+    text-align: center;
+    max-width: 100%;
+    height: 100%;
+    background: rgb(237, 247, 252);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384); 
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #40b4c4;
   }
   .card a{
     text-decoration: none;
@@ -133,37 +133,38 @@ body {
     justify-content: space-between;
     align-items: center;
     }
-    .modal{
-      display: none;
-      position: fixed;
-      z-index: 1;
-      overflow: auto;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(128, 128, 128, 0.623)
-    }
-    .contenido-modal{
-      position: relative;
-      background-color: white;
-      margin: auto;
-      width: 50%;
-      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
-      animation-name: modal;
-      animation-duration: 1s; 
-    }
-    .close{
-      color: red;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    .close:hover{
-      text-decoration: none;
-      cursor: pointer;
-    }
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.623)
+  }
+  .contenido-modal{
+    position: relative;
+    background-color: white;
+    margin: auto;
+    width: 50%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
+    animation-name: modal;
+    animation-duration: 1s; 
+  }
+  .close{
+    color: gray;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .close:hover{
+    text-decoration: none;
+    cursor: pointer;
+  }
     .modal-header{
-      background-color: #fdb455;
+      width: 100%;
+      background-color: #40b4c4;
       color: white;
       padding: 8px 16px;
       font-family: Acme;
@@ -173,7 +174,28 @@ body {
       text-align: right;
     }
     .modal-body{
-      padding: 20px 16px;
+      padding: 10px 6px;
+    }
+    .owner{
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+    .owner h2{
+      color: gray;
+    }
+    .owner hr{
+      margin: 10px;
+    }
+    .owner input{
+      width: 100%;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
+      margin: 5px;
+    }
+    .owner p{
+      color: gray;
+      font-size: 15px;
     }
     .register2{
       display: none;
@@ -304,7 +326,7 @@ body {
       text-align: left;
     }
     .contenido-modal{
-      width: 100%;
+      width: 95%;
     }
     .welcome{
       font-size: 20px;
