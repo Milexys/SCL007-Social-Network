@@ -102,6 +102,24 @@ body {
       cursor: pointer;
       font-weight: bold;
   }
+
+  .btncheckout{
+      width: 10%;
+      margin:10px;
+      margin-left: 80%;
+      border-radius: 10px;
+      background: #40b4c4;
+      padding: 5px;
+      font-size: 15px;
+      color: white;
+  }
+  .btncheckout:hover{
+    background:rgba(255, 255, 255, 0.78);
+    color: rgb(23, 145, 167); 
+    cursor: pointer;
+    font-weight: bold;
+}
+  
   .facebookBtn{
     width: 93%;
     margin: 10px;
