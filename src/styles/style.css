@@ -358,6 +358,7 @@ body {
        color:#ffff;
        padding: 10px 15px;
        display: block;
+      
       }
       .menu a:hover {
         background: #3697A5;
@@ -365,11 +366,13 @@ body {
       }
       li{
         list-style: none;
+        right: -262px;
+        bottom: 39px;
       }
       .menu li ul{
         display:none;
         position: absolute;
-        min-width: 260px;;
+        min-width: 260px;
       }
       .menu li:hover > ul{
         display: block;
@@ -378,8 +381,8 @@ body {
         position: relative;
       }
       .menu li ul li ul{
-        right:-260px;
-        top: 0px;
+        right:3px;
+        top: 36px;
       }
     @keyframes modal{
       from{
