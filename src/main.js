@@ -77,13 +77,22 @@ const loginUserWithEmailAndPassword = () => {
  }
   //::::::::::::::::::::::::::::::::::::::POST::::::::::::::::::::::::::::::::::::::::::::::::
   const posting = () => {
+    let postEmpty = document.getElementById("postAlert");
+    let postText = document.getElementById("postText").value;
+    if(postText === ""){
+      postEmpty.style.display= "block";
+    }
+    else {
     let postText = document.getElementById("postText").value;
     let userName = document.getElementById("postName").value;
     savePosting(postText, userName);
+    }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
+  
   let inExec = false;
   const readPostFromDatabase = () => {
+ 
     if(inExec){
       return;
     }
@@ -126,7 +135,6 @@ const loginUserWithEmailAndPassword = () => {
     )
   }
   //:::::::::::::::::::::::::::::::::::::::::::::menu::::::::::::::::::::::::::::::::::::::::::::::.
-
 
 
 
