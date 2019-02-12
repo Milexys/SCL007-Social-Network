@@ -33,14 +33,24 @@ window.onload = () => {
    }); 
 }
 //:::::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::::::::::::::::::
-const register = () => {
- 
-  const email = document.getElementById("emailRegister").value; 
-  const password = document.getElementById("passwordRegister").value; 
-  registerUser(email, password);
-  petData();
-   }
-   document.getElementById("registerButton").addEventListener("click", register);
+   document.getElementById("registerButton").addEventListener("click", () =>{
+      let petName = document.getElementById("petName").value;
+      let petType = document.getElementById("petType").value;
+      let petSex = document.getElementById("petSex").value;
+      let petAge = document.getElementById("petAge").value;
+      let petInformation = document.getElementById("petInformation").value;
+      let completeForm2 = document.getElementById("completeAlert2");
+      
+      if (petName === "" || petType === "" || petSex === "" || petAge === "" || petInformation === ""){
+        completeForm2.style.display= "block";
+      }
+      else {
+      const email = document.getElementById("emailRegister").value; 
+      const password = document.getElementById("passwordRegister").value; 
+      registerUser(email, password);
+      petData();
+     }
+   });
 //:::::::::::::::::::::::::::::::::::::::::::LOGIN:::::::::::::::::::::::::::::::::::::::::::::
 
 const loginUserWithEmailAndPassword = () => {
@@ -84,7 +94,6 @@ const loginUserWithEmailAndPassword = () => {
     <div class="container"> 
       <div class="postBox">
         <h4><b>Usuario:</b> ${post.val().user}</h4><br>
-        <div id="postBox">
           <p><b>Mensaje:</b></p>
           <p class="textmessage">${post.val().posting}</p>
         </div>
