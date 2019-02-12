@@ -103,7 +103,7 @@ body {
       font-weight: bold;
   }
 
-  .btncheckout{
+  .btncheckout {
       width: 10%;
       margin:10px;
       margin-left: 80%;
@@ -367,7 +367,21 @@ body {
         width: 100%;
         overflow: auto;
         height: auto;
+        word-break: break-all;
       }
+      .iconos{
+      padding:1%;
+      margin-left:190%;
+      }
+      .iconos2{
+        padding:1%;
+        margin-left:100%;
+      }
+
+      .iconos:hover {
+      background: #3697A5;
+      }
+
     @keyframes modal{
       from{
         bottom: -330px; 

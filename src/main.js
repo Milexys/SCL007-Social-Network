@@ -94,15 +94,16 @@ const loginUserWithEmailAndPassword = () => {
     <div class="container"> 
       <div class="postBox">
         <h4><b>Usuario:</b> ${post.val().user}</h4><br>
-          <p><b>Mensaje:</b></p>
+        <div id="postBox">
+          <p><b>Mensaje:</b></p><br/>
           <p class="textmessage">${post.val().posting}</p>
         </div>
         <div class="row">
           <div class="col-6">
-            <i class="material-icons">thumb_up</i>
+            <i class="material-icons iconos">thumb_up</i>
           </div>
           <div class="col-6">
-            <i class="material-icons">comment</i>
+            <i class="material-icons iconos2">comment</i>
           </div>
         </div>
       </div>
