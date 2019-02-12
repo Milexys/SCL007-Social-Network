@@ -311,6 +311,8 @@ body {
       width: 100%;
       background: #ffff;
       color: grey;
+      border: 1px solid #3697A5;
+      border-radius: 2px;
     }
     .barPost{
       height: 10px;
@@ -363,11 +365,15 @@ body {
       .postBox-header{
         width: 100%;
         background: #318a96;
-        border-radius: 2px;
         color: white;
       }
+      .paw{
+        width: 5%;
+        display: inline-block;
+      }
       .titlePost{
-        width: 100%;
+        width: 94%;
+        display: inline-block;
       }
       .titlePost h3{
         width: 100%;
@@ -439,13 +445,11 @@ body {
     .texto{
       display: none;
     }
-    .titlePost{
-      width: 88%;
+    .iconos div{
+      width: 23%;
     }
-    .menuPost{
-      width: 10%;
-      height: 100%;
-      text-align: center;
+    .titlePost{
+      width: 92%;
     }
   }
   

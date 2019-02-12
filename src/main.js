@@ -83,9 +83,10 @@ const loginUserWithEmailAndPassword = () => {
       postEmpty.style.display= "block";
     }
     else {
-    let postText = document.getElementById("postText").value;
-    let userName = document.getElementById("postName").value;
-    savePosting(postText, userName);
+      postEmpty.style.display= "none";
+      let postText = document.getElementById("postText").value;
+      let userName = document.getElementById("postName").value;
+      savePosting(postText, userName);
     }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
@@ -103,10 +104,13 @@ const loginUserWithEmailAndPassword = () => {
     <div class="container"> 
       <div class="postBox">
           <div class="postBox-header">
-              <div class="titlePost">
-                      <h3>${post.val().user}</h3>
-              </div>
-          </div>                
+            <div class="paw">
+              <i class="material-icons">pets</i>
+            </div>
+            <div class="titlePost">
+                <h3>${post.val().user}</h3>
+            </div>
+            </div>                
           <div id="postBox" class="postBox-body">
               <p><b>Mensaje:</b></p>
               <div class="message">
@@ -118,7 +122,7 @@ const loginUserWithEmailAndPassword = () => {
                 <i class="material-icons">edit</i>
               </div>
               <div class="delete">
-                <i class="material-icons">delete_sweep</i>
+                <i class="material-icons">delete</i>
               </div>
               <div class="likes">
                   <i class="material-icons">thumb_up</i>
