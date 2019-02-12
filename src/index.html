@@ -18,6 +18,7 @@
     <div class="topnav" id="myTopnav">
       <a href="#home">Inicio</a>
       <a href="#aboutUs">Quiénes somos</a>
+      <a class="btncheckout" id="signOut"><i class="fa fa-sign-out"></i></a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -28,7 +29,7 @@
         <div class="row">
             <div class="col-5">
                 <div class="imageBack">  
-                    <img src="/src/mascotas.jpg">            
+                    <img src="/src/img/mascotas.jpg">            
                 </div>
             </div>
             <div class="col-7">
@@ -172,74 +173,10 @@
 </main>
 <section>
     <div id="logIn" class="logIn">
-        <button class="btncheckout" id="signOut">Cerrar Sesión</button>
         <div class="container">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div class="welcome">
-                        <h1>Bienvenido a SocialPET</h1>
-                    </div>
-                </div>
-            </div>
             <div class="row menu">
                 <div class="col-1"></div>
-                <div class="col-3">
-                    <div class="aside">
-                        <li><a href="#">Veterinarios</a>
-                        <ul> <!--Abro opciones de veterinarios-->
-                        <li><a href="#">A Domicilio</a>
-                        <ul><!--Abro opciones de a domicilio-->
-                        <li><a target="_blank" href="https://www.modovet.com/dinamicanimal">Dinamicanimal</a></li>
-                        <li><a target="_blank" href="http://www.veterinarioaldomicilio.cl/servicios">Dr Eduardo Hidalgo Moreno</a></li>
-                        <li><a target="_blank" href="http://www.veterinariadomicilio.cl/precios-de-la-consulta-veterinaria-a-domicilio-santiago/">Dr a Domicilio</a></li>
-                       </ul><!--cierro opciones de a domicilio-->
-                       <li><a  href="#">Locales</a>
-                        <ul><!--Abro opciones de a locales-->
-                        <li><a target="_blank" href="http://www.hvs.cl/">Hospital Veterinario de Santiago</a></li>
-                        <li><a target="_blank" href="https://www.barkibu.com/es-cl/veterinarios/german-leon-7307">German Leon</a></li>
-                        <li><a target="_blank" href="https://www.barkibu.com/es-cl/veterinarios/claudia-hevia-cortes-14917">Claudia Hevia Cortés</a></li>
-                        </ul>
-                       </li><!--cierro opciones de a locales-->
-                        </li>
-                        </ul>
-                        </li><!--Cierro opciones de veterinarios-->
-                       
-                        <li><a href="#">Paseadores Caninos y Felinos</a><!--Abro Paseadores-->
-                            <ul>
-                                <li><a target="_blank" href="http://www.caninetrek.com/">Caninetrek</a></li>
-                                <li><a target="_blank" href="http://duko.cl/paseos/?gclid=CjwKCAiA7vTiBRAqEiwA4NTO60VK2wMpLzVffV9x_Pm2upLF47b4oAN4Cm6yE8XobYesUM6Mp7gGgxoCrIQQAvD_BwE">Duko</a></li>
-                                <li><a target="_blank" href="https://www.paseame.cl/">Paseame</a></li>
-                               </ul>
-                        </li><!--cierro opciones Paseadores-->
-                        <li><a href="#">Peluquería para Mascotas</a><!--Abro opciones de Peluquerías-->
-                            <ul> 
-                            <li><a href="#">A domicilio</a>
-                            <ul><!--Abro opciones de a domicilio-->
-                            <li><a target="_blank" href="http://www.mascotasalamoda.cl/">Mascotas a la moda</a></li>
-                            <li><a target="_blank" href="http://www.veterinariacafati.cl/index.php/1-peluqueria-canina-y-felina-banos-sanitarios-peinados-y-estetica-mascotas">Dr. Cafati</a></li>
-                            <li><a target="_blank" href="https://www.centralvet.cl/content/30-peluqueria-canina?gclid=CjwKCAiA7vTiBRAqEiwA4NTO63FvZA-2GtY1Lq1iyAj8SHT9Pj8YhzhVaiZuzAHyPYVvk2oEX9tyaRoCYBQQAvD_BwE">Centralvet</a></li>
-                           </ul><!--cierro opciones de a domicilio-->
-                           <li><a href="#">Locales</a>
-                            <ul><!--Abro opciones de a locales-->
-                            <li><a target="_blank" href="http://www.petsmann.cl/peluqueria/">Pet'sMann</a></li>
-                            <li><a target="_blank" href="http://www.veterinariabonamie.cl/peluqueria-canina-y-felina/">Bon Amie</a></li>
-                            <li><a target="_blank" href="http://www.lavacan.cl/">Lavacan</a></li>
-                            </ul>
-                           </li><!--cierro opciones de a locales-->
-                            </li>
-                            </ul>
-                            </li><!--Cierro opciones de Peluquerías-->
-                            <li><a href="#">Eventos para Mascotas</a><!--Abro eventos-->
-                            <ul>
-                            <li><a target="_blank" href="http://www.espacioriesco.cl/eventos/expo-mascotas-2019/">Expo Mascotas</a></li>
-                            <li><a target="_blank" href="https://bestforpets.cl/blog/expo-mascotas-animales-2015/">Best for Pet's</a></li>
-                            <li><a target="_blank" href="http://kennelclub.cl/eventos/">Kennel</a></li>
-                            </ul>
-                        </li><!--cierro eventos-->
-                    </div>
-                </div>
-                    <div class="col-7">
+                    <div class="col-10">
                         <div class="row">
                             <div class="col-12">
                                 <div class="post">
@@ -247,6 +184,7 @@
                                         ¿Quieres hacer una Publicación?
                                     </p>
                                     <textarea id="postName" class="postTextName" placeholder="Escribe tu nombre"></textarea>
+
                                     <textarea id="postText" class="postText" placeholder="Escribe aquí lo que desees publicar..."></textarea>
                                     <h6 class="alerta" id="postAlert">Por favor escribe una publicación</h6>
                                     <select class="btn">                    
@@ -263,6 +201,9 @@
                                 </div>
                             </div>
                         </div>            
+                    </div>
+                    <div class="col-1">
+                        
                     </div>
                 </div>
              </div>

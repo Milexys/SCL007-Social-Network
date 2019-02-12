@@ -40,7 +40,7 @@ window.onload = () => {
       let petAge = document.getElementById("petAge").value;
       let petInformation = document.getElementById("petInformation").value;
       let completeForm2 = document.getElementById("completeAlert2");
-      
+
       if (petName === "" || petType === "" || petSex === "" || petAge === "" || petInformation === ""){
         completeForm2.style.display= "block";
       }
@@ -83,9 +83,10 @@ const loginUserWithEmailAndPassword = () => {
       postEmpty.style.display= "block";
     }
     else {
-    let postText = document.getElementById("postText").value;
-    let userName = document.getElementById("postName").value;
-    savePosting(postText, userName);
+      postEmpty.style.display= "none";
+      let postText = document.getElementById("postText").value;
+      let userName = document.getElementById("postName").value;
+      savePosting(postText, userName);
     }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
@@ -102,26 +103,42 @@ const loginUserWithEmailAndPassword = () => {
     `
     <div class="container"> 
       <div class="postBox">
-        <h4><b>Usuario:</b> ${post.val().user}</h4><br>
-        <div id="postBox">
-          <p><b>Mensaje:</b></p><br/>
-          <p class="textmessage">${post.val().posting}</p>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <i class="material-icons iconos">thumb_up</i>
+          <div class="postBox-header">
+            <div class="paw">
+              <i class="material-icons">pets</i>
+            </div>
+            <div class="titlePost">
+                <h3>${post.val().user}</h3>
+            </div>
+            </div>                
+          <div id="postBox" class="postBox-body">
+              <p><b>Mensaje:</b></p>
+              <div class="message">
+                  <p class="textmessage">${post.val().posting}</p>
+              </div>                
           </div>
-          <div class="col-6">
-            <i class="material-icons iconos2">comment</i>
+          <div class="iconos">
+              <div class="edit">
+                <i class="material-icons">edit</i>
+              </div>
+              <div class="delete">
+                <i class="material-icons">delete</i>
+              </div>
+              <div class="likes">
+                  <i class="material-icons">thumb_up</i>
+              </div>
+              <div class="comment">
+                  <i class="material-icons">mode_comment</i>
+              </div>
           </div>
-        </div>
       </div>
-      <hr>
-    </div>
+    <hr class="barPost">
+  </div>
     `
     + document.getElementById("postear").innerHTML 
     )
   }
+  //:::::::::::::::::::::::::::::::::::::::::::::menu::::::::::::::::::::::::::::::::::::::::::::::.
 
 
 
