@@ -388,6 +388,19 @@ body {
         height: auto;
         word-break: break-all;
       }
+      .iconos{
+      padding:1%;
+      margin-left:190%;
+      }
+      .iconos2{
+        padding:1%;
+        margin-left:100%;
+      }
+
+      .iconos:hover {
+      background: #3697A5;
+      }
+
     @keyframes modal{
       from{
         bottom: -330px; 
