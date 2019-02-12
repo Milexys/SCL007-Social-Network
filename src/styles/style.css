@@ -340,9 +340,7 @@ body {
     }
     .postBox{
       width: 90%;
-      border: 1px solid #fdb455;
-      border-radius: 10px;
-      margin: 20px;
+      margin: 15px;
       padding: 10px;
       background: #ffff;
       color: grey;
@@ -383,6 +381,12 @@ body {
       .menu li ul li ul{
         right:3px;
         top: 36px;
+      }
+      .textmessage{
+        width: 100%;
+        overflow: auto;
+        height: auto;
+        word-break: break-all;
       }
     @keyframes modal{
       from{
