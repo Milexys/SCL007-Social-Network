@@ -84,9 +84,6 @@ const loginUserWithEmailAndPassword = () => {
         <p><b>Mensaje:</b> ${post.val().posting}</p><br>
        </div>
     </div>
-    <div>
-    <button class="btnLike">Me gusta</button>
-    </div>
     `
     + document.getElementById("postear").innerHTML 
     )
