@@ -175,14 +175,6 @@
     <div id="logIn" class="logIn">
         <button class="btncheckout" id="signOut">Cerrar Sesión</button>
         <div class="container">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div class="welcome">
-                        <h1>Bienvenido a SocialPET</h1>
-                    </div>
-                </div>
-            </div>
             <div class="row menu">
                 <div class="col-1"></div>
                 <div class="col-3">
@@ -249,11 +241,15 @@
                                     </p>
                                     <textarea id="postName" class="postTextName" placeholder="Escribe tu nombre"></textarea>
                                     <textarea id="postText" class="postText" placeholder="Escribe aquí lo que desees publicar..." maxlength="110"></textarea>
-                                    <select class="btn">                    
-                                        <option value="public">Público</option>
-                                        <option value="private">Privado</option>
-                                    </select>
-                                    <button id="postBtn" class="btn">Publicar</button>
+                                    <div class="selectPublic">
+                                        <select class="btn">                    
+                                            <option value="public">Público</option>
+                                            <option value="private">Privado</option>
+                                        </select>
+                                    </div>
+                                    <div class="btnPost">
+                                        <button id="postBtn" class="btn">Publicar</button>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>                       

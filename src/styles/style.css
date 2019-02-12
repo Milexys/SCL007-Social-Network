@@ -262,17 +262,6 @@ body {
       color:red;
       display: none;
     }
-    .welcome{
-      width: 100%;
-      font-size: 40px;
-      font-family: Acme;
-      color: white;
-      text-align: center;
-      background: #fdb455;
-      border: 5px solid white;
-      border-radius: 10px;
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
-    }
     .aside{
       overflow: hidden;
       background-color: white;
@@ -281,50 +270,52 @@ body {
       border: 1px solid #3697A5;
       float: left;
     }
-    .aside a{
-      display: block;
-      color: #fdb455;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
     
     .post{
       text-align: center;
       width: 100%;
-      background: white;
-      border: 1px solid #fdb455;
-      border-radius: 10px;
+      background:  rgb(230, 247, 255);
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
       padding: 10px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384);
+    }
+    .post div{
+      display: inline-block;
     }
     .postText{
       max-width: 100%;
       min-width: 100%;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
       height: 100px;
     }
     .postTextName{
+      text-align: left;
       margin:1%;
       max-width: 100%;
       min-width: 100%;
-      height:25%;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
       ; 
     }
     .postear{
       max-width: 100%;
-      border: 1px solid #fdb455;
-      border-radius: 10px;
+      border: 1px solid #40b4c4;
+      border-radius: 2px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.384);
-      background-color: white;
+      background-color: rgb(230, 247, 255);
       padding: 10px;
     }
     .postBox{
-      width: 90%;
-      margin: 15px;
-      padding: 10px;
+      width: 100%;
       background: #ffff;
       color: grey;
+    }
+    .barPost{
+      height: 10px;
+      color: rgb(230, 247, 255);
+      border: 0;
     }
     .postTextName{
       margin-left: -0.1%;
@@ -369,17 +360,26 @@ body {
         height: auto;
         word-break: break-all;
       }
+      .postBox-header{
+        width: 100%;
+        background: #318a96;
+        border-radius: 2px;
+        color: white;
+      }
+      .titlePost{
+        width: 100%;
+      }
+      .titlePost h3{
+        width: 100%;
+        height: auto;
+      }
       .iconos{
-      padding:1%;
-      margin-left:190%;
+      width: 100%;
       }
-      .iconos2{
-        padding:1%;
-        margin-left:100%;
-      }
-
-      .iconos:hover {
-      background: #3697A5;
+      .iconos div{
+        display: inline-block;
+        width: 24%;
+        text-align: center;
       }
 
     @keyframes modal{
@@ -438,6 +438,14 @@ body {
     }
     .texto{
       display: none;
+    }
+    .titlePost{
+      width: 88%;
+    }
+    .menuPost{
+      width: 10%;
+      height: 100%;
+      text-align: center;
     }
   }
   
