@@ -390,6 +390,24 @@ body {
         padding:2%;
         margin-top:8%;
     }
+    .iconfb{
+      font-size: 30px;
+      margin-right:230px;
+      color: #ffff;
+    }
+    #icontlf{
+      font-size: 30px;
+      margin-left:30px; 
+      }
+
+    .rs div{
+      display:inline-block;
+      width:3%;
+    }
+    .tlf{
+      font-size: 14px;
+      margin-right:5px; 
+    }
 
     @keyframes modal{
       from{
