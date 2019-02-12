@@ -72,17 +72,32 @@ const loginUserWithEmailAndPassword = () => {
     savePosting(postText, userName);
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
- 
+  let inExec = false;
   const readPostFromDatabase = () => {
-    console.log("leyendo post");
+    if(inExec){
+      return;
+    }
+    inExec = true;
     readPost((post)=>
     document.getElementById("postear").innerHTML = 
     `
-    <div class="postBox">
-      <h4><b>Usuario:</b> ${post.val().user}</h4><br>
-      <div id="postBox">
-        <p><b>Mensaje:</b> ${post.val().posting}</p>
+    <div class="container"> 
+      <div class="postBox">
+        <h4><b>Usuario:</b> ${post.val().user}</h4><br>
+        <div id="postBox">
+          <p><b>Mensaje:</b></p>
+          <p class="textmessage">${post.val().posting}</p>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <i class="material-icons">thumb_up</i>
+          </div>
+          <div class="col-6">
+            <i class="material-icons">comment</i>
+          </div>
+        </div>
       </div>
+      <hr>
     </div>
     `
     + document.getElementById("postear").innerHTML 
