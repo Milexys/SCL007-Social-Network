@@ -377,10 +377,19 @@ body {
         padding:1%;
         margin-left:100%;
       }
-
       .iconos:hover {
       background: #3697A5;
       }
+      .footer{
+        height:50%;
+        width: 100%;
+        background-color:#4A8C96; 
+        color:#ffff;
+        font-size: 12px;
+        text-align: center;
+        padding:2%;
+        margin-top:8%;
+    }
 
     @keyframes modal{
       from{
