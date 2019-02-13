@@ -1,18 +1,21 @@
 export const savePet = (petOwner, petName, petType, petSex, petAge, petInformation) => {
+  
   const newPetKey = firebase.database().ref('pets/').child('profile').push().key;
+  
   firebase.database().ref(`pets/${newPetKey}`).set({
-    Owner: petOwner,
-    Name: petName,
-    Type: petType,
-    Sex: petSex,
-    Age: petAge,
-    Information: petInformation
+    owner: petOwner,
+    name: petName,
+    type: petType,
+    sex: petSex,
+    age: petAge,
+    information: petInformation
   });
 }
 
-export const savePosting = (postText, userName) => {
+export const savePosting = (postID, postText, userName) => {
   const newPostKey = firebase.database().ref('post/').child('post').push().key;
   firebase.database().ref(`post/${newPostKey}`).set({
+    uid: postID,
     user: userName,
     posting: postText,
   });
@@ -23,3 +26,7 @@ export const readPost = (onPostChange) => {
     onPostChange(post);
   });
 };
+export const deletePost = (postID) => {
+  let postRef = firebase.database().ref(`post/`);
+  postRef.child(postID).remove();
+}

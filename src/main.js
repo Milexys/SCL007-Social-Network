@@ -8,11 +8,9 @@ document.addEventListener("DOMContentLoaded", event => {
     messagingSenderId: "678447862491"
 };
 firebase.initializeApp(config);
-let database = firebase.database();
-})
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
-import {savePosting, readPost, savePet} from './data/data.js'
+import {savePosting, readPost, savePet, deletePost} from './data/data.js'
 window.onload = () => {
   checkAuthState((user)=>{
     firebase.auth().onAuthStateChanged(function(user) {
@@ -31,9 +29,10 @@ window.onload = () => {
       }
     });
    }); 
-}
+  }
 //:::::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::::::::::::::::::
    document.getElementById("registerButton").addEventListener("click", () =>{
+     //Validacion para el formulario de registro
       let petName = document.getElementById("petName").value;
       let petType = document.getElementById("petType").value;
       let petSex = document.getElementById("petSex").value;
@@ -58,12 +57,16 @@ const loginUserWithEmailAndPassword = () => {
     const passwordFromUser = passwordSignIn.value;
     loginUser(emailFromUser, passwordFromUser);
   };
+  //boton del login
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
+  //boton de facebook
   document.getElementById("facebook").addEventListener("click", facebookLogin);
-
+  
+  //boton de google
   document.getElementById("google").addEventListener("click", googleLogin);
 
+  //boton de cerrar sesión
   document.getElementById("signOut").addEventListener("click", logOut);
   //::::::::::::::::::::::::::::::::::::REGISTER DATA::::::::::::::::::::::::::::::::::::::::::::
   const petData = () => {
@@ -86,7 +89,9 @@ const loginUserWithEmailAndPassword = () => {
       postEmpty.style.display= "none";
       let postText = document.getElementById("postText").value;
       let userName = document.getElementById("postName").value;
-      savePosting(postText, userName);
+      const userID = firebase.auth().currentUser.uid;
+
+      savePosting(userID, postText, userName);
     }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
@@ -99,6 +104,7 @@ const loginUserWithEmailAndPassword = () => {
     }
     inExec = true;
     readPost((post)=>
+    
     document.getElementById("postear").innerHTML = 
     `
     <div class="container"> 
@@ -122,7 +128,7 @@ const loginUserWithEmailAndPassword = () => {
                 <i class="material-icons">edit</i>
               </div>
               <div class="delete">
-                <i class="material-icons">delete</i>
+                <a href="#" id="delete" class="deleteIcon"><i class="material-icons">delete</i></a>
               </div>
               <div class="likes">
                   <i class="material-icons">thumb_up</i>
@@ -139,6 +145,14 @@ const loginUserWithEmailAndPassword = () => {
     )
   }
   //:::::::::::::::::::::::::::::::::::::::::::::menu::::::::::::::::::::::::::::::::::::::::::::::.
+  const deletingPost = () =>{
+    const postID = firebase.auth().currentUser.uid;
+    deletePost(postID);
+  }
+});
+
+  
+
 
 
 
