@@ -390,26 +390,22 @@ body {
         color:#ffff;
         font-size: 12px;
         text-align: center;
-        padding:2%;
+        padding:2.2%;
         margin-top:8%;
     }
-    .iconfb{
+    .iconRs{
       font-size: 30px;
-      margin-right:230px;
       color: #ffff;
     }
-    #icontlf{
-      font-size: 30px;
-      margin-left:30px; 
-      }
-
-    .rs div{
+     .rs div{
       display:inline-block;
-      width:3%;
+      width:5%;
     }
-    .tlf{
-      font-size: 14px;
-      margin-right:5px; 
+    .quienesomos{
+      font-size: 16px;
+      margin-left:5px;
+      color: #ffff;
+      text-decoration: none;
     }
     
     @keyframes modal{
