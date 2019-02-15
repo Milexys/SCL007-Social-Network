@@ -21,6 +21,8 @@
         if(user.emailVerified){
           document.getElementById("root").style.display = "none";
           document.getElementById("logIn").style.display = "block";
+          document.getElementById("welcomeText").style.display = "none";
+
           readPostFromDatabase();
         }
       modal.style.display = "none";    
