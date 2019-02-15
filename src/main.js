@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", event => {
-  const config = {
-    apiKey: "AIzaSyBoEkrJVmd5cNJQAd-drkN8_L5mRUIa-74",
-    authDomain: "pet-social-network-e35d0.firebaseapp.com",
-    databaseURL: "https://pet-social-network-e35d0.firebaseio.com",
-    projectId: "pet-social-network-e35d0",
-    storageBucket: "pet-social-network-e35d0.appspot.com",
-    messagingSenderId: "678447862491"
-};
-firebase.initializeApp(config);
-let database = firebase.database();
-})
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
-import {savePosting, readPost, savePet} from './data/data.js'
-window.onload = () => {
+  document.addEventListener("DOMContentLoaded", event => {
+    const config = {
+      apiKey: "AIzaSyBoEkrJVmd5cNJQAd-drkN8_L5mRUIa-74",
+      authDomain: "pet-social-network-e35d0.firebaseapp.com",
+      databaseURL: "https://pet-social-network-e35d0.firebaseio.com",
+      projectId: "pet-social-network-e35d0",
+      storageBucket: "pet-social-network-e35d0.appspot.com",
+      messagingSenderId: "678447862491"
+  };
+  firebase.initializeApp(config);
+  });
+
+  //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  import {checkAuthState, registerUser, loginUser, facebookLogin, googleLogin, logOut} from './auth/auth.js';
+  import {savePosting, readPost, savePet} from './data/data.js'
+  window.onload = () => {
   checkAuthState((user)=>{
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
@@ -33,9 +33,10 @@ window.onload = () => {
       }
     });
    }); 
-}
-//:::::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::::::::::::::::::
+  }
+  //:::::::::::::::::::::::::::::::::::REGISTER:::::::::::::::::::::::::::::::::::::::::::::::::::
    document.getElementById("registerButton").addEventListener("click", () =>{
+     //Validacion para el formulario de registro
       let petName = document.getElementById("petName").value;
       let petType = document.getElementById("petType").value;
       let petSex = document.getElementById("petSex").value;
@@ -55,17 +56,21 @@ window.onload = () => {
    });
 //:::::::::::::::::::::::::::::::::::::::::::LOGIN:::::::::::::::::::::::::::::::::::::::::::::
 
-const loginUserWithEmailAndPassword = () => {
+  const loginUserWithEmailAndPassword = () => {
     const emailFromUser = emailSignIn.value;
     const passwordFromUser = passwordSignIn.value;
     loginUser(emailFromUser, passwordFromUser);
   };
+  //boton del login
   document.getElementById("signIn").addEventListener("click", loginUserWithEmailAndPassword);
 
+  //boton de facebook
   document.getElementById("facebook").addEventListener("click", facebookLogin);
-
+  
+  //boton de google
   document.getElementById("google").addEventListener("click", googleLogin);
 
+  //boton de cerrar sesión
   document.getElementById("signOut").addEventListener("click", logOut);
   //::::::::::::::::::::::::::::::::::::REGISTER DATA::::::::::::::::::::::::::::::::::::::::::::
   const petData = () => {
@@ -92,15 +97,31 @@ const loginUserWithEmailAndPassword = () => {
     }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
-  
+  //ID UNICA
+  /*let createID = (function(){
+    let map = {}
+    return function(prefix) {
+      prefix = prefix || 'autoSocial';
+      map[prefix] = map[prefix] || 0;
+      let id = prefix + '-' + map[prefix]++;
+      if (document.getElementById(id)){
+        return createID(prefix);
+      }
+      return id;
+    }
+  })()*/
+  //CREA EL POST
+
   let inExec = false;
   const readPostFromDatabase = () => {
- 
+    
     if(inExec){
       return;
     }
     inExec = true;
-    readPost((post)=>
+   // document.getElementById("postear").innerHTML = "";
+    readPost((post)=>{
+    
     document.getElementById("postear").innerHTML = 
     `
     <div class="container"> 
@@ -120,27 +141,34 @@ const loginUserWithEmailAndPassword = () => {
               </div>                
           </div>
           <div class="iconos">
-              <div class="edit">
-                <i class="material-icons">edit</i>
-              </div>
-              <div class="delete">
-                <i class="material-icons">delete</i>
-              </div>
-              <div class="likes">
-                  <i class="material-icons">thumb_up</i>
-              </div>
-              <div class="comment">
-                  <i class="material-icons">mode_comment</i>
+          <div class="delete">
+                <a id="postDelete${post.key}" class="deleteIcon">
+                <i class="material-icons">delete</i></a>
               </div>
           </div>
       </div>
     <hr class="barPost">
   </div>
     `
-    + document.getElementById("postear").innerHTML 
-    )
+    + document.getElementById("postear").innerHTML; 
+    let deletePost = document.getElementsByClassName("deleteIcon");
+    for (let i = 0; i< deletePost.length; i++){
+      deletePost[i].addEventListener("click", deletingPost);
+    }
+    })
   }
   //:::::::::::::::::::::::::::::::::::::::::::::menu::::::::::::::::::::::::::::::::::::::::::::::.
+const deletingPost = (post) =>{
+let confirmation = confirm("¿Desea eliminar esta publicación?");
+if (confirmation){
+  const IDpost = post.currentTarget.getAttribute("id").slice(10);
+  console.log(IDpost);
+  firebase.database().ref("post/"+IDpost).remove();
+  readPostFromDatabase();
+}else{
+  readPostFromDatabase();
+}
+}
 
 
 

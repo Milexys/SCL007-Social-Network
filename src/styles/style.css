@@ -23,8 +23,8 @@ body {
   }
   
   .topnav a:hover {
-    background-color: rgb(223, 242, 245);
-    color: #40b4c4;
+    background: #3697A5;
+    color: white;
     font-weight: bold;
   }
   
@@ -37,6 +37,7 @@ body {
     filter: grayscale(50%);
   }
   .welcomeText{
+    margin-bottom: 2%;
     width: 100%;
     text-align: center;
   }
@@ -384,14 +385,14 @@ body {
         text-align: center;
       }
       .footer{
-        height:50%;
+        height:40%;
         width: 100%;
         background-color:#4A8C96; 
         color:#ffff;
         font-size: 12px;
         text-align: center;
         padding:2.2%;
-        margin-top:8%;
+        margin-top:14%;
     }
     .iconRs{
       font-size: 30px;
@@ -401,11 +402,8 @@ body {
       display:inline-block;
       width:5%;
     }
-    .quienesomos{
-      font-size: 16px;
-      margin-left:5px;
-      color: #ffff;
-      text-decoration: none;
+    .delete :hover{
+      background-color: #4A8C96;
     }
     
     @keyframes modal{
