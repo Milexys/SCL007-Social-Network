@@ -114,15 +114,16 @@
 
   let inExec = false;
   const readPostFromDatabase = () => {
-    
     if(inExec){
       return;
     }
     inExec = true;
    // document.getElementById("postear").innerHTML = "";
-    readPost((post)=>{
+    readPost((post) => {
     
-    document.getElementById("postear").innerHTML = 
+    let newDiv = document.createElement("div");
+    newDiv.id = post.key;
+    newDiv.innerHTML = 
     `
     <div class="container"> 
       <div class="postBox">
@@ -138,7 +139,14 @@
               <p><b>Mensaje:</b></p>
               <div class="message">
                   <p class="textmessage">${post.val().posting}</p>
-              </div>                
+              </div> 
+              <div id="editBox" data-id="${post.key}" class="editingBox">
+                <textarea id="editedText" class="editingTextarea"></textarea>
+                <div class="editButtons">
+                  <button id="cancelEdit">Cancelar</button>
+                  <button id="updateButton">Actualizar</button>
+                </div>
+              </div>              
           </div>
           <div class="iconos">
           <div class="delete">
@@ -150,25 +158,44 @@
     <hr class="barPost">
   </div>
     `
-    + document.getElementById("postear").innerHTML; 
+    postear.insertBefore(newDiv, postear.childNodes[0]);
+
     let deletePost = document.getElementsByClassName("deleteIcon");
     for (let i = 0; i< deletePost.length; i++){
       deletePost[i].addEventListener("click", deletingPost);
     }
-    })
+    let editPost = document.getElementsByClassName("editIcon");
+    for (let i = 0; i< editPost.length; i++){
+      editPost[i].addEventListener("click", editingPost);
+    }
+    });
   }
-  //:::::::::::::::::::::::::::::::::::::::::::::menu::::::::::::::::::::::::::::::::::::::::::::::.
+  //:::::::::::::::::::::::::::::::::::::::::::::DELETE POST::::::::::::::::::::::::::::::::::::::::::::::.
 const deletingPost = (post) =>{
 let confirmation = confirm("¿Desea eliminar esta publicación?");
 if (confirmation){
   const IDpost = post.currentTarget.getAttribute("id").slice(10);
-  console.log(IDpost);
   firebase.database().ref("post/"+IDpost).remove();
+  post.key.
   readPostFromDatabase();
-}else{
-  readPostFromDatabase();
+  }else{
+    readPostFromDatabase();
+  }
 }
+//:::::::::::::::::::::::::::::::::::::::::::EDIT POST::::::::::::::::::::::::::::::::::::::::::::
+
+const editingPost = (post) => {
+  const prueba = document.getElementById("editBox");
+  const IDpost = prueba.dataset.id;
+  console.log(IDpost);
+  let editingBox = document.getElementById("editBox");
+  let cancelEdit = document.getElementById("cancelEdit");
+  editingBox.style.display = "block";
+  cancelEdit.addEventListener("click", () => {
+    editingBox.style.display = "none";
+  })
 }
+
 
 
 
