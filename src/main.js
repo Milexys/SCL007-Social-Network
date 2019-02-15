@@ -149,23 +149,15 @@
               </div>              
           </div>
           <div class="iconos">
-              <div class="edit">
-                <a id="postEdit" class="editIcon"><i class="material-icons">edit</i></a>
-              </div>
-              <div class="delete">
-                <a id="postDelete${post.key}" class="deleteIcon"><i class="material-icons">delete</i></a>
-              </div>
-              <div class="likes">
-                  <i class="material-icons">thumb_up</i>
-              </div>
-              <div class="comment">
-                  <i class="material-icons">mode_comment</i>
+          <div class="delete">
+                <a id="postDelete${post.key}" class="deleteIcon">
+                <i class="material-icons">delete</i></a>
               </div>
           </div>
       </div>
     <hr class="barPost">
   </div>
-    `;
+    `
     postear.insertBefore(newDiv, postear.childNodes[0]);
 
     let deletePost = document.getElementsByClassName("deleteIcon");
