@@ -390,9 +390,6 @@ body {
         width: 24%;
         text-align: center;
       }
-      .editingBox{
-        display:none;
-      }
       .footer{
         height:40%;
         width: 100%;
@@ -481,6 +478,15 @@ body {
     }
     .titlePost{
       width: 92%;
+    }
+    .paw{
+      width:10%;
+    }
+    .titlePost{
+      width: 88%;
+    }
+    .menu{
+      display: none;
     }
   }
   
