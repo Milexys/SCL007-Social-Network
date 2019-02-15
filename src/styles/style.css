@@ -414,6 +414,10 @@ body {
     .delete :hover{
       background-color: #4A8C96;
     }
+    .containerRs div{
+      width: 30%;
+      display: inline-block;
+    }
     
     @keyframes modal{
       from{
