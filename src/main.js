@@ -120,6 +120,7 @@
     readPost((post) => {
     
     let newDiv = document.createElement("div");
+    newDiv.id = post.key;
     newDiv.innerHTML = 
     `
     <div class="container"> 
@@ -137,7 +138,7 @@
               <div class="message">
                   <p class="textmessage">${post.val().posting}</p>
               </div> 
-              <div class="editingBox">
+              <div id="editBox" data-id="${post.key}" class="editingBox">
                 <textarea id="editedText" class="editingTextarea"></textarea>
                 <div class="editButtons">
                   <button id="cancelEdit">Cancelar</button>
@@ -147,7 +148,7 @@
           </div>
           <div class="iconos">
               <div class="edit">
-                <a id="postEdit${post.key}" class="editIcon"><i class="material-icons">edit</i></a>
+                <a id="postEdit" class="editIcon"><i class="material-icons">edit</i></a>
               </div>
               <div class="delete">
                 <a id="postDelete${post.key}" class="deleteIcon"><i class="material-icons">delete</i></a>
@@ -180,17 +181,27 @@ const deletingPost = (post) =>{
 let confirmation = confirm("¿Desea eliminar esta publicación?");
 if (confirmation){
   const IDpost = post.currentTarget.getAttribute("id").slice(10);
-  console.log(IDpost);
   firebase.database().ref("post/"+IDpost).remove();
+  post.key.
   readPostFromDatabase();
   }else{
     readPostFromDatabase();
   }
 }
 //:::::::::::::::::::::::::::::::::::::::::::EDIT POST::::::::::::::::::::::::::::::::::::::::::::
+
 const editingPost = (post) => {
-  console.log("click");
+  const prueba = document.getElementById("editBox");
+  const IDpost = prueba.dataset.id;
+  console.log(IDpost);
+  let editingBox = document.getElementById("editBox");
+  let cancelEdit = document.getElementById("cancelEdit");
+  editingBox.style.display = "block";
+  cancelEdit.addEventListener("click", () => {
+    editingBox.style.display = "none";
+  })
 }
+
 
 
 
