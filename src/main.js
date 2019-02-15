@@ -97,19 +97,7 @@
     }
   } 
   document.getElementById("postBtn").addEventListener("click", posting);
-  //ID UNICA
-  /*let createID = (function(){
-    let map = {}
-    return function(prefix) {
-      prefix = prefix || 'autoSocial';
-      map[prefix] = map[prefix] || 0;
-      let id = prefix + '-' + map[prefix]++;
-      if (document.getElementById(id)){
-        return createID(prefix);
-      }
-      return id;
-    }
-  })()*/
+
   //CREA EL POST
 
   let inExec = false;
@@ -118,7 +106,6 @@
       return;
     }
     inExec = true;
-   // document.getElementById("postear").innerHTML = "";
     readPost((post) => {
     
     let newDiv = document.createElement("div");
@@ -139,13 +126,6 @@
               <p><b>Mensaje:</b></p>
               <div class="message">
                   <p class="textmessage">${post.val().posting}</p>
-              </div> 
-              <div id="editBox" data-id="${post.key}" class="editingBox">
-                <textarea id="editedText" class="editingTextarea"></textarea>
-                <div class="editButtons">
-                  <button id="cancelEdit">Cancelar</button>
-                  <button id="updateButton">Actualizar</button>
-                </div>
               </div>              
           </div>
           <div class="iconos">
@@ -164,10 +144,6 @@
     for (let i = 0; i< deletePost.length; i++){
       deletePost[i].addEventListener("click", deletingPost);
     }
-    let editPost = document.getElementsByClassName("editIcon");
-    for (let i = 0; i< editPost.length; i++){
-      editPost[i].addEventListener("click", editingPost);
-    }
     });
   }
   //:::::::::::::::::::::::::::::::::::::::::::::DELETE POST::::::::::::::::::::::::::::::::::::::::::::::.
@@ -176,7 +152,6 @@ let confirmation = confirm("¿Desea eliminar esta publicación?");
 if (confirmation){
   const IDpost = post.currentTarget.getAttribute("id").slice(10);
   firebase.database().ref("post/"+IDpost).remove();
-  post.key.
   readPostFromDatabase();
   }else{
     readPostFromDatabase();
@@ -184,17 +159,6 @@ if (confirmation){
 }
 //:::::::::::::::::::::::::::::::::::::::::::EDIT POST::::::::::::::::::::::::::::::::::::::::::::
 
-const editingPost = (post) => {
-  const prueba = document.getElementById("editBox");
-  const IDpost = prueba.dataset.id;
-  console.log(IDpost);
-  let editingBox = document.getElementById("editBox");
-  let cancelEdit = document.getElementById("cancelEdit");
-  editingBox.style.display = "block";
-  cancelEdit.addEventListener("click", () => {
-    editingBox.style.display = "none";
-  })
-}
 
 
 
