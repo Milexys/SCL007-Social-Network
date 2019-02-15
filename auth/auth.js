@@ -1,7 +1,8 @@
 //::::::::::::::::::::::::::::::::::::::FACEBOOK:::::::::::::::::::::::::::::::::::::::::::::::::::
 export const facebookLogin = () => {
     var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithPopup(provider)
+    firebase.auth().signInWithPopup(provider).then(function(){
+    })
   }
   //:::::::::::::::::::::::::::::::::::::::::::::GOOGLE::::::::::::::::::::::::::::::::::::::::::::
  export const googleLogin = () => {
@@ -13,7 +14,7 @@ export const facebookLogin = () => {
   export const checkAuthState = (callback) => {
     firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-        console.log("Hay un usuario");
+        console.log("Hay un usuario > "+JSON.stringify(user));
         callback(user);
       }else{
         console.log("No está logueado");
@@ -62,6 +63,7 @@ export const loginUser = (emailFromUser, passwordFromUser) => {
   var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function() {
     console.log("enviando...")
+    alert("Enviando email de verificación")
   }).catch(function(error) {
     console.log(error);
   });
